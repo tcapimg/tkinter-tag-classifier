@@ -1,0 +1,3751 @@
+{
+    "categories": [
+        {
+            "id": "person",
+            "name": "人物",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "1girl",
+                    "ja": "1人の女の子"
+                },
+                {
+                    "en": "2girls",
+                    "ja": "2人の女の子"
+                },
+                {
+                    "en": "multiple girls",
+                    "ja": "複数の女の子"
+                },
+                {
+                    "en": "boy",
+                    "ja": "男の子"
+                },
+                {
+                    "en": "shota",
+                    "ja": "ショタ"
+                },
+                {
+                    "en": "loli",
+                    "ja": "ロリ"
+                },
+                {
+                    "en": "age difference",
+                    "ja": "年齢差"
+                },
+                {
+                    "en": "teacher",
+                    "ja": "教師"
+                },
+                {
+                    "en": "student",
+                    "ja": "学生"
+                },
+                {
+                    "en": "male",
+                    "ja": "男"
+                },
+                {
+                    "en": "female",
+                    "ja": "女性"
+                },
+                {
+                    "en": "asian",
+                    "ja": "アジア人"
+                },
+                {
+                    "en": "child",
+                    "ja": "子供"
+                },
+                {
+                    "en": "adult",
+                    "ja": "アダルト"
+                },
+                {
+                    "en": "elderly",
+                    "ja": "お年寄り"
+                },
+                {
+                    "en": "multiple boys",
+                    "ja": "男の子"
+                },
+                {
+                    "en": "2boys",
+                    "ja": "男の子"
+                },
+                {
+                    "en": "male pubic hair",
+                    "ja": "男"
+                }
+            ]
+        },
+        {
+            "id": "body",
+            "name": "身体",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "small breasts",
+                    "ja": "小さい胸"
+                },
+                {
+                    "en": "medium breasts",
+                    "ja": "中くらいの胸"
+                },
+                {
+                    "en": "large breasts",
+                    "ja": "大きな胸"
+                },
+                {
+                    "en": "huge breasts",
+                    "ja": "巨大な胸"
+                },
+                {
+                    "en": "hanging breasts",
+                    "ja": "垂れ乳"
+                },
+                {
+                    "en": "ass",
+                    "ja": "お尻"
+                },
+                {
+                    "en": "pussy",
+                    "ja": "プッシー"
+                },
+                {
+                    "en": "testicles",
+                    "ja": "睾丸"
+                },
+                {
+                    "en": "penis",
+                    "ja": "陰茎"
+                },
+                {
+                    "en": "lips",
+                    "ja": "唇"
+                },
+                {
+                    "en": "legs",
+                    "ja": "脚"
+                },
+                {
+                    "en": "bare legs",
+                    "ja": "裸足"
+                },
+                {
+                    "en": "thighs",
+                    "ja": "太もも"
+                },
+                {
+                    "en": "feet",
+                    "ja": "足"
+                },
+                {
+                    "en": "hands",
+                    "ja": "手"
+                },
+                {
+                    "en": "fingers",
+                    "ja": "指"
+                },
+                {
+                    "en": "pubic hair",
+                    "ja": "陰毛"
+                },
+                {
+                    "en": "female pubic hair",
+                    "ja": "女性の陰毛"
+                },
+                {
+                    "en": "armpits",
+                    "ja": "脇の下"
+                },
+                {
+                    "en": "navel",
+                    "ja": "へそ"
+                },
+                {
+                    "en": "nipples",
+                    "ja": "乳首"
+                },
+                {
+                    "en": "areolae",
+                    "ja": "乳輪"
+                },
+                {
+                    "en": "clitoris",
+                    "ja": "クリトリス"
+                },
+                {
+                    "en": "anus",
+                    "ja": "肛門"
+                },
+                {
+                    "en": "breasts",
+                    "ja": "小さい胸"
+                },
+                {
+                    "en": "black pubic hair",
+                    "ja": "陰毛"
+                },
+                {
+                    "en": "excessive pubic hair",
+                    "ja": "陰毛"
+                }
+            ]
+        },
+        {
+            "id": "hair",
+            "name": "髪",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "black hair",
+                    "ja": "黒髪"
+                },
+                {
+                    "en": "blonde hair",
+                    "ja": "ブロンドの髪"
+                },
+                {
+                    "en": "brown hair",
+                    "ja": "茶色の髪"
+                },
+                {
+                    "en": "blue hair",
+                    "ja": "青い髪"
+                },
+                {
+                    "en": "pink hair",
+                    "ja": "ピンクの髪"
+                },
+                {
+                    "en": "red hair",
+                    "ja": "赤毛"
+                },
+                {
+                    "en": "green hair",
+                    "ja": "緑の髪"
+                },
+                {
+                    "en": "purple hair",
+                    "ja": "紫色の髪"
+                },
+                {
+                    "en": "ahoge",
+                    "ja": "アホ毛"
+                },
+                {
+                    "en": "bangs",
+                    "ja": "前髪"
+                },
+                {
+                    "en": "sideburns",
+                    "ja": "もみあげ"
+                }
+            ]
+        },
+        {
+            "id": "eyes",
+            "name": "瞳",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "blue eyes",
+                    "ja": "青い目"
+                },
+                {
+                    "en": "red eyes",
+                    "ja": "赤い目"
+                },
+                {
+                    "en": "green eyes",
+                    "ja": "緑色の目"
+                },
+                {
+                    "en": "brown eyes",
+                    "ja": "茶色の目"
+                },
+                {
+                    "en": "purple eyes",
+                    "ja": "紫色の目"
+                },
+                {
+                    "en": "yellow eyes",
+                    "ja": "黄色い目"
+                },
+                {
+                    "en": "heterochromia",
+                    "ja": "虹彩異色症"
+                },
+                {
+                    "en": "closed eyes",
+                    "ja": "目を閉じて"
+                },
+                {
+                    "en": "eyelashes",
+                    "ja": "睫毛"
+                },
+                {
+                    "en": "eyebrows",
+                    "ja": "眉毛"
+                },
+                {
+                    "en": "hetero",
+                    "ja": "虹彩異色症"
+                }
+            ]
+        },
+        {
+            "id": "clothes",
+            "name": "服装",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "shirt",
+                    "ja": "シャツ"
+                },
+                {
+                    "en": "t-shirt",
+                    "ja": "Tシャツ"
+                },
+                {
+                    "en": "dress",
+                    "ja": "ドレス"
+                },
+                {
+                    "en": "skirt",
+                    "ja": "スカート"
+                },
+                {
+                    "en": "pencil skirt",
+                    "ja": "ペンシルスカート"
+                },
+                {
+                    "en": "pleated skirt",
+                    "ja": "プリーツスカート"
+                },
+                {
+                    "en": "pants",
+                    "ja": "ズボン"
+                },
+                {
+                    "en": "jeans",
+                    "ja": "ジーンズ"
+                },
+                {
+                    "en": "shorts",
+                    "ja": "ショートパンツ"
+                },
+                {
+                    "en": "uniform",
+                    "ja": "制服"
+                },
+                {
+                    "en": "school uniform",
+                    "ja": "制服"
+                },
+                {
+                    "en": "sailor uniform",
+                    "ja": "セーラー服"
+                },
+                {
+                    "en": "suit",
+                    "ja": "スーツ"
+                },
+                {
+                    "en": "jacket",
+                    "ja": "ジャケット"
+                },
+                {
+                    "en": "cardigan",
+                    "ja": "カーディガン"
+                },
+                {
+                    "en": "sweater",
+                    "ja": "セーター"
+                },
+                {
+                    "en": "vest",
+                    "ja": "ベスト"
+                },
+                {
+                    "en": "hoodie",
+                    "ja": "パーカー"
+                },
+                {
+                    "en": "coat",
+                    "ja": "コート"
+                },
+                {
+                    "en": "lingerie",
+                    "ja": "ランジェリー"
+                },
+                {
+                    "en": "bra",
+                    "ja": "ブラジャー"
+                },
+                {
+                    "en": "black bra",
+                    "ja": "黒いブラジャー"
+                },
+                {
+                    "en": "pink bra",
+                    "ja": "ピンクのブラジャー"
+                },
+                {
+                    "en": "yellow bra",
+                    "ja": "黄色いブラジャー"
+                },
+                {
+                    "en": "bow bra",
+                    "ja": "ボウブラ"
+                },
+                {
+                    "en": "panties",
+                    "ja": "パンティー"
+                },
+                {
+                    "en": "black panties",
+                    "ja": "黒いパンティー"
+                },
+                {
+                    "en": "pink panties",
+                    "ja": "ピンクのパンティー"
+                },
+                {
+                    "en": "bow panties",
+                    "ja": "リボンパンティー"
+                },
+                {
+                    "en": "stockings",
+                    "ja": "ストッキング"
+                },
+                {
+                    "en": "thighhighs",
+                    "ja": "サイハイソックス"
+                },
+                {
+                    "en": "pantyhose",
+                    "ja": "パンスト"
+                },
+                {
+                    "en": "socks",
+                    "ja": "ソックス"
+                },
+                {
+                    "en": "footwear",
+                    "ja": "履物"
+                },
+                {
+                    "en": "shoes",
+                    "ja": "靴"
+                },
+                {
+                    "en": "sneakers",
+                    "ja": "スニーカー"
+                },
+                {
+                    "en": "boots",
+                    "ja": "ブーツ"
+                },
+                {
+                    "en": "sandals",
+                    "ja": "サンダル"
+                },
+                {
+                    "en": "heels",
+                    "ja": "ハイヒール"
+                },
+                {
+                    "en": "necktie",
+                    "ja": "ネクタイ"
+                },
+                {
+                    "en": "bowtie",
+                    "ja": "ちょうネクタイ"
+                },
+                {
+                    "en": "bow",
+                    "ja": "弓"
+                },
+                {
+                    "en": "ribbon",
+                    "ja": "リボン"
+                },
+                {
+                    "en": "scarf",
+                    "ja": "スカーフ"
+                },
+                {
+                    "en": "gloves",
+                    "ja": "手袋"
+                },
+                {
+                    "en": "hat",
+                    "ja": "帽子"
+                },
+                {
+                    "en": "cap",
+                    "ja": "キャップ"
+                },
+                {
+                    "en": "glasses",
+                    "ja": "眼鏡"
+                },
+                {
+                    "en": "sunglasses",
+                    "ja": "サングラス"
+                },
+                {
+                    "en": "swimsuit",
+                    "ja": "水着"
+                },
+                {
+                    "en": "bikini",
+                    "ja": "ビキニ"
+                },
+                {
+                    "en": "school swimsuit",
+                    "ja": "スクール水着"
+                },
+                {
+                    "en": "leotard",
+                    "ja": "レオタード"
+                },
+                {
+                    "en": "apron",
+                    "ja": "エプロン"
+                },
+                {
+                    "en": "bunny suit",
+                    "ja": "バニースーツ"
+                },
+                {
+                    "en": "nurse uniform",
+                    "ja": "ナースユニフォーム"
+                },
+                {
+                    "en": "police uniform",
+                    "ja": "警察の制服"
+                },
+                {
+                    "en": "military uniform",
+                    "ja": "軍服"
+                },
+                {
+                    "en": "yukata",
+                    "ja": "浴衣"
+                },
+                {
+                    "en": "kimono",
+                    "ja": "着物"
+                },
+                {
+                    "en": "cheongsam",
+                    "ja": "チャイナドレス"
+                },
+                {
+                    "en": "garter straps",
+                    "ja": "ガーターストラップ"
+                },
+                {
+                    "en": "suspenders",
+                    "ja": "サスペンダー"
+                },
+                {
+                    "en": "belt",
+                    "ja": "ベルト"
+                },
+                {
+                    "en": "zipper",
+                    "ja": "ジッパー"
+                },
+                {
+                    "en": "buttons",
+                    "ja": "ボタン"
+                }
+            ]
+        },
+        {
+            "id": "clothes_state_action",
+            "name": "服装の状態/アクション",
+            "parent_id": "clothes",
+            "tags": [
+                {
+                    "en": "open clothes",
+                    "ja": "開いた服"
+                },
+                {
+                    "en": "open shirt",
+                    "ja": "オープンシャツ"
+                },
+                {
+                    "en": "clothes pull",
+                    "ja": "服を引っ張る"
+                },
+                {
+                    "en": "panty pull",
+                    "ja": "パンティを引っ張る"
+                },
+                {
+                    "en": "pants pull",
+                    "ja": "ズボンを引っ張る"
+                },
+                {
+                    "en": "skirt lift",
+                    "ja": "スカートめくり"
+                },
+                {
+                    "en": "clothes lift",
+                    "ja": "洋服リフト"
+                },
+                {
+                    "en": "undressing",
+                    "ja": "脱衣"
+                },
+                {
+                    "en": "unworn panties",
+                    "ja": "未使用のパンティー"
+                },
+                {
+                    "en": "no panties",
+                    "ja": "パンツなし"
+                },
+                {
+                    "en": "no socks",
+                    "ja": "靴下なし"
+                },
+                {
+                    "en": "no legwear",
+                    "ja": "レッグウェアなし"
+                },
+                {
+                    "en": "one breast out",
+                    "ja": "片方の胸を外に出す"
+                },
+                {
+                    "en": "erection under clothes",
+                    "ja": "服の下で勃起"
+                },
+                {
+                    "en": "bulge",
+                    "ja": "膨らみ"
+                },
+                {
+                    "en": "sleeves rolled up",
+                    "ja": "袖をまくった"
+                },
+                {
+                    "en": "torn clothes",
+                    "ja": "破れた服"
+                },
+                {
+                    "en": "wet clothes",
+                    "ja": "濡れた服"
+                },
+                {
+                    "en": "erection",
+                    "ja": "服の下で勃起"
+                }
+            ]
+        },
+        {
+            "id": "pose",
+            "name": "ポーズ",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "standing",
+                    "ja": "立っている"
+                },
+                {
+                    "en": "standing on one leg",
+                    "ja": "片足で立つ"
+                },
+                {
+                    "en": "sitting",
+                    "ja": "座っている"
+                },
+                {
+                    "en": "kneeling",
+                    "ja": "ひざまずく"
+                },
+                {
+                    "en": "on one knee",
+                    "ja": "片膝をついて"
+                },
+                {
+                    "en": "squatting",
+                    "ja": "しゃがむ"
+                },
+                {
+                    "en": "bent over",
+                    "ja": "かがんだ"
+                },
+                {
+                    "en": "lying",
+                    "ja": "嘘をつく"
+                },
+                {
+                    "en": "on back",
+                    "ja": "背中に"
+                },
+                {
+                    "en": "on stomach",
+                    "ja": "お腹の上"
+                },
+                {
+                    "en": "on side",
+                    "ja": "横に"
+                },
+                {
+                    "en": "leg lift",
+                    "ja": "脚上げ"
+                },
+                {
+                    "en": "leg up",
+                    "ja": "足を上げる"
+                },
+                {
+                    "en": "spread legs",
+                    "ja": "足を広げる"
+                },
+                {
+                    "en": "tiptoes",
+                    "ja": "つま先立ち"
+                },
+                {
+                    "en": "hands on own knees",
+                    "ja": "自分の膝に手を置く"
+                },
+                {
+                    "en": "arms up",
+                    "ja": "腕を上げる"
+                },
+                {
+                    "en": "arms crossed",
+                    "ja": "腕を組んで"
+                },
+                {
+                    "en": "hands on hips",
+                    "ja": "腰に手を当てる"
+                },
+                {
+                    "en": "fingers in mouth",
+                    "ja": "口に指を入れる"
+                },
+                {
+                    "en": "licking lips",
+                    "ja": "唇をなめる"
+                },
+                {
+                    "en": "looking at viewer",
+                    "ja": "視聴者を見ている"
+                },
+                {
+                    "en": "looking away",
+                    "ja": "目をそらす"
+                },
+                {
+                    "en": "profile",
+                    "ja": "プロフィール"
+                },
+                {
+                    "en": "back",
+                    "ja": "戻る"
+                },
+                {
+                    "en": "from below",
+                    "ja": "下から"
+                },
+                {
+                    "en": "from above",
+                    "ja": "上から"
+                },
+                {
+                    "en": "on the screen of smartphone camera app frame",
+                    "ja": "スマートフォンのカメラアプリのフレームの画面上"
+                },
+                {
+                    "en": "stomach",
+                    "ja": "お腹の上"
+                },
+                {
+                    "en": "leg hair",
+                    "ja": "片足で立つ"
+                },
+                {
+                    "en": "cum in mouth",
+                    "ja": "口に指を入れる"
+                }
+            ]
+        },
+        {
+            "id": "pose_action",
+            "name": "ポーズのアクション",
+            "parent_id": "pose",
+            "tags": [
+                {
+                    "en": "grabbing",
+                    "ja": "つかむ"
+                },
+                {
+                    "en": "ass grab",
+                    "ja": "お尻を掴む"
+                },
+                {
+                    "en": "grabbing another's ass",
+                    "ja": "他人の尻をつかむ"
+                },
+                {
+                    "en": "grabbing another's breast",
+                    "ja": "他人の胸をつかむ"
+                },
+                {
+                    "en": "groping",
+                    "ja": "模索"
+                },
+                {
+                    "en": "biting",
+                    "ja": "噛む"
+                },
+                {
+                    "en": "kissing",
+                    "ja": "キス"
+                },
+                {
+                    "en": "adjusting her collar",
+                    "ja": "襟を直す"
+                },
+                {
+                    "en": "arching her back",
+                    "ja": "背中を反らして"
+                },
+                {
+                    "en": "arm at her side",
+                    "ja": "腕を脇に"
+                },
+                {
+                    "en": "arms at her side",
+                    "ja": "腕を脇に置いた"
+                },
+                {
+                    "en": "arms behind her back",
+                    "ja": "腕を背中の後ろに回す"
+                },
+                {
+                    "en": "arms behind her head",
+                    "ja": "腕を頭の後ろに組む"
+                },
+                {
+                    "en": "beckoning",
+                    "ja": "手招き"
+                },
+                {
+                    "en": "body bridge",
+                    "ja": "ボディブリッジ"
+                },
+                {
+                    "en": "bunny pose",
+                    "ja": "ウサギのポーズ"
+                },
+                {
+                    "en": "butterfly sitting",
+                    "ja": "蝶が座っている"
+                },
+                {
+                    "en": "chin in hand",
+                    "ja": "顎を手に"
+                },
+                {
+                    "en": "claw pose",
+                    "ja": "爪のポーズ"
+                },
+                {
+                    "en": "contrapposto",
+                    "ja": "コントラポスト"
+                },
+                {
+                    "en": "crawling",
+                    "ja": "這う"
+                },
+                {
+                    "en": "crossed ankles",
+                    "ja": "足首を組む"
+                },
+                {
+                    "en": "crossed arms",
+                    "ja": "腕を組んだ"
+                },
+                {
+                    "en": "crossed legs",
+                    "ja": "足を組む"
+                },
+                {
+                    "en": "crossing ankles",
+                    "ja": "足首を交差させる"
+                },
+                {
+                    "en": "dorsiflexion",
+                    "ja": "背屈"
+                },
+                {
+                    "en": "dynamic pose",
+                    "ja": "ダイナミックなポーズ"
+                },
+                {
+                    "en": "feminine pose",
+                    "ja": "女性的なポーズ"
+                },
+                {
+                    "en": "fetal position",
+                    "ja": "胎児の姿勢"
+                },
+                {
+                    "en": "fidgeting",
+                    "ja": "そわそわする"
+                },
+                {
+                    "en": "figure four sitting",
+                    "ja": "四の字座り"
+                },
+                {
+                    "en": "finger gun",
+                    "ja": "指銃"
+                },
+                {
+                    "en": "finger heart",
+                    "ja": "指ハート"
+                },
+                {
+                    "en": "flexing",
+                    "ja": "屈曲"
+                },
+                {
+                    "en": "getting dressed",
+                    "ja": "服を着る"
+                },
+                {
+                    "en": "getting undressed",
+                    "ja": "服を脱ぐ"
+                },
+                {
+                    "en": "hands above her head",
+                    "ja": "頭の上に手を置く"
+                },
+                {
+                    "en": "hands folded",
+                    "ja": "手を組んで"
+                },
+                {
+                    "en": "hands in pockets",
+                    "ja": "ポケットに手を入れて"
+                },
+                {
+                    "en": "hands on face",
+                    "ja": "顔に手を当てる"
+                },
+                {
+                    "en": "hands-on-hips",
+                    "ja": "腰に手を当てる"
+                },
+                {
+                    "en": "head down",
+                    "ja": "頭を下げる"
+                },
+                {
+                    "en": "head rest",
+                    "ja": "ヘッドレスト"
+                },
+                {
+                    "en": "head tilt",
+                    "ja": "頭を傾ける"
+                },
+                {
+                    "en": "heart arms",
+                    "ja": "ハートの腕"
+                },
+                {
+                    "en": "heart hands",
+                    "ja": "ハートの手"
+                },
+                {
+                    "en": "horns pose",
+                    "ja": "角のポーズ"
+                },
+                {
+                    "en": "hugging own legs",
+                    "ja": "自分の足を抱きしめる"
+                },
+                {
+                    "en": "in ecstasy",
+                    "ja": "恍惚状態"
+                },
+                {
+                    "en": "in profile",
+                    "ja": "横顔"
+                },
+                {
+                    "en": "jumping",
+                    "ja": "ジャンプ"
+                },
+                {
+                    "en": "knees apart feet together",
+                    "ja": "膝を広げ、足を揃える"
+                },
+                {
+                    "en": "knees to chest",
+                    "ja": "膝を胸につける"
+                },
+                {
+                    "en": "knees together feet apart",
+                    "ja": "膝を合わせて足を広げる"
+                },
+                {
+                    "en": "laying down",
+                    "ja": "横になる"
+                },
+                {
+                    "en": "leaning back",
+                    "ja": "後ろに寄りかかる"
+                },
+                {
+                    "en": "leaning back against a wall",
+                    "ja": "壁に寄りかかって"
+                },
+                {
+                    "en": "leaning forward",
+                    "ja": "前かがみになる"
+                },
+                {
+                    "en": "legs apart",
+                    "ja": "足を広げて"
+                },
+                {
+                    "en": "legs crossed",
+                    "ja": "足を組む"
+                },
+                {
+                    "en": "legs over head",
+                    "ja": "足を頭の上に置く"
+                },
+                {
+                    "en": "legs up",
+                    "ja": "足を上げる"
+                },
+                {
+                    "en": "lip bite",
+                    "ja": "唇を噛む"
+                },
+                {
+                    "en": "looking into the distance",
+                    "ja": "遠くを見つめる"
+                },
+                {
+                    "en": "looking over her shoulder",
+                    "ja": "肩越しに見ている"
+                },
+                {
+                    "en": "lotus position",
+                    "ja": "蓮華座"
+                },
+                {
+                    "en": "lying against the ground",
+                    "ja": "地面に横たわる"
+                },
+                {
+                    "en": "hand on head",
+                    "ja": "頭に手を当てる"
+                },
+                {
+                    "en": "lying face down",
+                    "ja": "うつ伏せ"
+                },
+                {
+                    "en": "head toward the camera",
+                    "ja": "カメラに向かって頭を向ける"
+                },
+                {
+                    "en": "lying in the grass",
+                    "ja": "草の上に横たわる"
+                },
+                {
+                    "en": "facing forward",
+                    "ja": "前を向いて"
+                },
+                {
+                    "en": "lying on back",
+                    "ja": "仰向けに寝ている"
+                },
+                {
+                    "en": "parallel to the camera",
+                    "ja": "カメラと平行"
+                },
+                {
+                    "en": "perpendicular to the camera",
+                    "ja": "カメラに対して垂直"
+                },
+                {
+                    "en": "lying on side",
+                    "ja": "横向きに寝る"
+                },
+                {
+                    "en": "lying on stomach",
+                    "ja": "うつ伏せ"
+                },
+                {
+                    "en": "making eye contact",
+                    "ja": "アイコンタクトをとる"
+                },
+                {
+                    "en": "on all fours",
+                    "ja": "四つん這いで"
+                },
+                {
+                    "en": "on tiptoes",
+                    "ja": "つま先立ちで"
+                },
+                {
+                    "en": "one arm behind her back",
+                    "ja": "片腕を背中に回して"
+                },
+                {
+                    "en": "one arm behind her head",
+                    "ja": "片腕を頭の後ろに"
+                },
+                {
+                    "en": "one hand on her hip",
+                    "ja": "片手を腰に当てて"
+                },
+                {
+                    "en": "one hand behind her head",
+                    "ja": "片手を頭の後ろに"
+                },
+                {
+                    "en": "outstretched arm",
+                    "ja": "伸ばした腕"
+                },
+                {
+                    "en": "outstretched arms",
+                    "ja": "伸ばした腕"
+                },
+                {
+                    "en": "outstretched hand",
+                    "ja": "差し出された手"
+                },
+                {
+                    "en": "outstretched leg",
+                    "ja": "伸ばした足"
+                },
+                {
+                    "en": "paw pose",
+                    "ja": "前足のポーズ"
+                },
+                {
+                    "en": "playing with her hair",
+                    "ja": "髪を弄ぶ"
+                },
+                {
+                    "en": "posing",
+                    "ja": "ポーズ"
+                },
+                {
+                    "en": "prostration",
+                    "ja": "衰弱"
+                },
+                {
+                    "en": "reaching",
+                    "ja": "到達"
+                },
+                {
+                    "en": "reading a book",
+                    "ja": "本を読む"
+                },
+                {
+                    "en": "reclining",
+                    "ja": "リクライニング"
+                },
+                {
+                    "en": "relaxing",
+                    "ja": "リラックス"
+                },
+                {
+                    "en": "resting head on hands",
+                    "ja": "両手で頭を休める"
+                },
+                {
+                    "en": "resting on a diagonal",
+                    "ja": "斜めに載る"
+                },
+                {
+                    "en": "showing indifference",
+                    "ja": "無関心を示す"
+                },
+                {
+                    "en": "shushing",
+                    "ja": "シーッ"
+                },
+                {
+                    "en": "sitting parallel to the camera",
+                    "ja": "カメラと平行に座る"
+                },
+                {
+                    "en": "hand on knee",
+                    "ja": "膝に手を当てる"
+                },
+                {
+                    "en": "sitting with elbows on knees",
+                    "ja": "肘を膝に置いて座る"
+                },
+                {
+                    "en": "sitting with hands around her ankles",
+                    "ja": "足首に手を当てて座っている"
+                },
+                {
+                    "en": "sitting with her back arched",
+                    "ja": "背中を反らせて座っている"
+                },
+                {
+                    "en": "sleeping",
+                    "ja": "眠っている"
+                },
+                {
+                    "en": "slouching",
+                    "ja": "猫背"
+                },
+                {
+                    "en": "spread arms",
+                    "ja": "腕を広げる"
+                },
+                {
+                    "en": "standing in an s-shape",
+                    "ja": "S字に立つ"
+                },
+                {
+                    "en": "standing splits",
+                    "ja": "立ち開脚"
+                },
+                {
+                    "en": "standing with hand on her hip",
+                    "ja": "腰に手を当てて立っている"
+                },
+                {
+                    "en": "standing with hands in her pockets",
+                    "ja": "ポケットに手を入れて立っている"
+                },
+                {
+                    "en": "standing with hands on hips",
+                    "ja": "腰に手を当てて立っている"
+                },
+                {
+                    "en": "straddling",
+                    "ja": "またがる"
+                },
+                {
+                    "en": "stretching",
+                    "ja": "ストレッチ"
+                },
+                {
+                    "en": "sunbathing",
+                    "ja": "日光浴"
+                },
+                {
+                    "en": "thigh straddling",
+                    "ja": "太ももをまたぐ"
+                },
+                {
+                    "en": "thoughtful pose",
+                    "ja": "思慮深いポーズ"
+                },
+                {
+                    "en": "toe-point",
+                    "ja": "つま先"
+                },
+                {
+                    "en": "top-down bottom-up",
+                    "ja": "トップダウン ボトムアップ"
+                },
+                {
+                    "en": "touching toes",
+                    "ja": "つま先に触れる"
+                },
+                {
+                    "en": "turned away but looking back over her shoulder",
+                    "ja": "彼女は背を向けたが、肩越しに振り返っていた"
+                },
+                {
+                    "en": "twirling pose",
+                    "ja": "くるくるポーズ"
+                },
+                {
+                    "en": "twisted torso",
+                    "ja": "ねじれた胴体"
+                },
+                {
+                    "en": "upright straddle",
+                    "ja": "直立開脚"
+                },
+                {
+                    "en": "walking",
+                    "ja": "歩く"
+                },
+                {
+                    "en": "waving",
+                    "ja": "手を振る"
+                },
+                {
+                    "en": "winking",
+                    "ja": "ウインク"
+                },
+                {
+                    "en": "wrapping arms around legs",
+                    "ja": "足に腕を巻き付ける"
+                },
+                {
+                    "en": "Sitting cross-legged",
+                    "ja": "あぐらをかいて座る"
+                },
+                {
+                    "en": "Leaning against a wall",
+                    "ja": "壁に寄りかかる"
+                },
+                {
+                    "en": "Jumping with arms raised",
+                    "ja": "腕を上げてジャンプする"
+                },
+                {
+                    "en": "Lying on the stomach",
+                    "ja": "うつ伏せ"
+                },
+                {
+                    "en": "propped up on elbows",
+                    "ja": "肘をついて支える"
+                },
+                {
+                    "en": "Sitting with one leg folded",
+                    "ja": "片足を折って座る"
+                },
+                {
+                    "en": "Posing with arms folded",
+                    "ja": "腕を組んでポーズをとる"
+                },
+                {
+                    "en": "Running with hands extended",
+                    "ja": "手を伸ばして走る"
+                },
+                {
+                    "en": "Lounging on an invisible chaise",
+                    "ja": "見えない長椅子に横たわる"
+                },
+                {
+                    "en": "Leaning forward with hands on knees",
+                    "ja": "膝に手をついて前かがみになる"
+                },
+                {
+                    "en": "Standing on tiptoes",
+                    "ja": "つま先立ち"
+                },
+                {
+                    "en": "Spinning with arms outstretched",
+                    "ja": "腕を伸ばして回転する"
+                },
+                {
+                    "en": "Crouching with hands on the ground",
+                    "ja": "両手を地面につけてしゃがむ"
+                },
+                {
+                    "en": "Hopping on one foot",
+                    "ja": "片足で跳ねる"
+                },
+                {
+                    "en": "Arching the back",
+                    "ja": "背中を反らせる"
+                },
+                {
+                    "en": "Bending over with hands touching toes",
+                    "ja": "手をつま先に触れながらかがむ"
+                },
+                {
+                    "en": "Kneeling with one hand on the thigh",
+                    "ja": "片手を太ももに置いてひざまずく"
+                },
+                {
+                    "en": "Standing straight with hands clasped behind",
+                    "ja": "両手を後ろで組んでまっすぐに立つ"
+                },
+                {
+                    "en": "Dancing with arms in the air",
+                    "ja": "腕を上げて踊る"
+                },
+                {
+                    "en": "Twirling hair with fingers",
+                    "ja": "指で髪をくるくる回す"
+                },
+                {
+                    "en": "Sitting with legs extended",
+                    "ja": "足を伸ばして座る"
+                },
+                {
+                    "en": "Reaching high with both hands",
+                    "ja": "両手で高く手を伸ばす"
+                },
+                {
+                    "en": "leaning on one hand",
+                    "ja": "片手に寄りかかって"
+                },
+                {
+                    "en": "Kneeling with head bowed",
+                    "ja": "頭を下げてひざまずく"
+                },
+                {
+                    "en": "Lying on the side",
+                    "ja": "横向きに寝る"
+                },
+                {
+                    "en": "propped up on one elbow",
+                    "ja": "片肘をついて"
+                },
+                {
+                    "en": "Leaping with legs extended",
+                    "ja": "足を伸ばして跳躍する"
+                },
+                {
+                    "en": "Stretching both arms overhead",
+                    "ja": "両腕を頭上に伸ばす"
+                },
+                {
+                    "en": "Balancing on one foot",
+                    "ja": "片足でバランスを取る"
+                },
+                {
+                    "en": "Squatting with hands on ankles",
+                    "ja": "足首に手を当ててしゃがむ"
+                },
+                {
+                    "en": "Pretending to hold a giant ball",
+                    "ja": "巨大なボールを持っているふりをする"
+                },
+                {
+                    "en": "Pretending to push an invisible object",
+                    "ja": "目に見えない物を押すふりをする"
+                },
+                {
+                    "en": "Sitting with hands clasping the knee",
+                    "ja": "膝を抱えて座る"
+                },
+                {
+                    "en": "Posing as if blowing a kiss",
+                    "ja": "キスを吹きかけるようなポーズ"
+                },
+                {
+                    "en": "Standing with one hand on the hip",
+                    "ja": "片手を腰に当てて立つ"
+                },
+                {
+                    "en": "Walking with hands swinging by sides",
+                    "ja": "手を横に振って歩く"
+                },
+                {
+                    "en": "Sitting with legs crossed at ankles",
+                    "ja": "足首を組んで座る"
+                },
+                {
+                    "en": "Mimicking playing an air guitar",
+                    "ja": "エアギターの演奏を真似する"
+                },
+                {
+                    "en": "Leaning back with hands stretched out",
+                    "ja": "手を伸ばして後ろに傾く"
+                },
+                {
+                    "en": "Pretending to climb a ladder",
+                    "ja": "はしごを登るふりをする"
+                },
+                {
+                    "en": "Standing with one leg bent",
+                    "ja": "片足を曲げて立つ"
+                },
+                {
+                    "en": "Bending sideways with one hand reaching down",
+                    "ja": "片手を下に伸ばしながら横に曲がる"
+                },
+                {
+                    "en": "Leaning on an invisible table",
+                    "ja": "見えないテーブルに寄りかかる"
+                },
+                {
+                    "en": "Lying flat on the back with arms at sides",
+                    "ja": "腕を横に置いて仰向けに寝る"
+                },
+                {
+                    "en": "Mimicking a yoga pose",
+                    "ja": "ヨガのポーズを真似る"
+                },
+                {
+                    "en": "Dancing with one hand on the hip",
+                    "ja": "片手を腰に当てて踊る"
+                },
+                {
+                    "en": "Standing with arms behind the head",
+                    "ja": "腕を頭の後ろに組んで立つ"
+                },
+                {
+                    "en": "Kneeling with both hands on thighs",
+                    "ja": "両手を太ももに置いてひざまずく"
+                },
+                {
+                    "en": "Pretending to hold a heavy box",
+                    "ja": "重い箱を持っているふりをする"
+                },
+                {
+                    "en": "Running with arms pumping at sides",
+                    "ja": "腕を横に振って走る"
+                },
+                {
+                    "en": "Sitting with back hunched",
+                    "ja": "背中を丸めて座っている"
+                },
+                {
+                    "en": "Leaping with one hand reaching up",
+                    "ja": "片手を伸ばして飛び上がる"
+                },
+                {
+                    "en": "Bending over as if picking something up",
+                    "ja": "何かを拾うかのようにかがむ"
+                },
+                {
+                    "en": "Standing with one foot in front of the other",
+                    "ja": "片足を前に出して立つ"
+                },
+                {
+                    "en": "Lounging with one hand behind the head",
+                    "ja": "片手を頭の後ろに当ててくつろぐ"
+                },
+                {
+                    "en": "Spinning with dress flared out",
+                    "ja": "ドレスを広げて回転する"
+                },
+                {
+                    "en": "Posing as if throwing a ball",
+                    "ja": "ボールを投げているようなポーズ"
+                },
+                {
+                    "en": "Mimicking a ballet pose",
+                    "ja": "バレエのポーズを真似る"
+                },
+                {
+                    "en": "Crouching with arms hugging knees",
+                    "ja": "腕を膝に抱えてしゃがむ"
+                },
+                {
+                    "en": "Pretending to play an air violin",
+                    "ja": "エアバイオリンを弾くふりをする"
+                },
+                {
+                    "en": "Leaning against an invisible pillar",
+                    "ja": "見えない柱に寄りかかって"
+                },
+                {
+                    "en": "Standing with one arm extended",
+                    "ja": "片腕を伸ばして立つ"
+                },
+                {
+                    "en": "Dancing with both arms extended",
+                    "ja": "両腕を伸ばして踊る"
+                },
+                {
+                    "en": "legs kicked up",
+                    "ja": "足を蹴り上げる"
+                },
+                {
+                    "en": "Jumping with one knee bent",
+                    "ja": "片膝を曲げてジャンプする"
+                },
+                {
+                    "en": "Sitting with one knee up",
+                    "ja": "片膝を上げて座る"
+                },
+                {
+                    "en": "Standing straight with hands at sides",
+                    "ja": "両手を体の横に置いてまっすぐに立つ"
+                },
+                {
+                    "en": "Pretending to pull an invisible rope",
+                    "ja": "見えないロープを引くふりをする"
+                },
+                {
+                    "en": "Leaping with arms extended to the sides",
+                    "ja": "両腕を横に広げて跳躍する"
+                },
+                {
+                    "en": "Balancing on tiptoes",
+                    "ja": "つま先でバランスを取る"
+                },
+                {
+                    "en": "Posing as if catching a frisbee",
+                    "ja": "フリスビーをキャッチするポーズ"
+                },
+                {
+                    "en": "Pretending to hit a baseball",
+                    "ja": "野球を打つふりをする"
+                },
+                {
+                    "en": "Squatting with arms hanging between knees",
+                    "ja": "腕を膝の間に下げてしゃがむ"
+                },
+                {
+                    "en": "Standing with one hand reaching up",
+                    "ja": "片手を上に伸ばして立っている"
+                },
+                {
+                    "en": "Mimicking a fencing pose",
+                    "ja": "フェンシングのポーズを真似る"
+                },
+                {
+                    "en": "Running with one arm extended forward",
+                    "ja": "片腕を前に伸ばして走る"
+                },
+                {
+                    "en": "Kneeling with one hand reaching out",
+                    "ja": "片手を伸ばしてひざまずく"
+                },
+                {
+                    "en": "Twirling with arms in the air",
+                    "ja": "腕を上げてくるくる回る"
+                },
+                {
+                    "en": "Crouching with one hand on the ground",
+                    "ja": "片手を地面につけてしゃがむ"
+                },
+                {
+                    "en": "Standing with arms crossed over chest",
+                    "ja": "腕を胸の前で組んで立っている"
+                },
+                {
+                    "en": "Pretending to hold a large umbrella",
+                    "ja": "大きな傘を持っているふりをする"
+                },
+                {
+                    "en": "Sitting with legs tucked under",
+                    "ja": "足を折り曲げて座る"
+                },
+                {
+                    "en": "Dancing with one arm raised",
+                    "ja": "片腕を上げて踊る"
+                },
+                {
+                    "en": "Lying flat with hands under the head",
+                    "ja": "手を頭の下に置いて横になる"
+                },
+                {
+                    "en": "Balancing with arms outstretched",
+                    "ja": "腕を伸ばしてバランスを取る"
+                },
+                {
+                    "en": "Leaning forward with one hand on the knee",
+                    "ja": "片手を膝に置いて前かがみになる"
+                },
+                {
+                    "en": "Jumping with legs apart",
+                    "ja": "足を広げてジャンプする"
+                },
+                {
+                    "en": "Sitting with one hand on the cheek",
+                    "ja": "片手を頬に当てて座る"
+                },
+                {
+                    "en": "Standing with arms hanging loosely",
+                    "ja": "腕をだらりと下げて立っている"
+                },
+                {
+                    "en": "Pretending to swing a golf club",
+                    "ja": "ゴルフクラブを振る真似をする"
+                },
+                {
+                    "en": "Kneeling with one knee up",
+                    "ja": "片膝を上げてひざまずく"
+                },
+                {
+                    "en": "Posing as if shouting into the distance",
+                    "ja": "遠くに向かって叫んでいるかのようなポーズ"
+                },
+                {
+                    "en": "Lying on the side with knees bent",
+                    "ja": "膝を曲げて横向きに寝る"
+                },
+                {
+                    "en": "Leaping with one arm up",
+                    "ja": "片腕を上げてジャンプする"
+                },
+                {
+                    "en": "Standing with one hand on the waist",
+                    "ja": "片手を腰に当てて立つ"
+                },
+                {
+                    "en": "Walking with one hand in the pocket",
+                    "ja": "片手をポケットに入れて歩く"
+                },
+                {
+                    "en": "Crouching with both hands on the ground",
+                    "ja": "両手を地面につけてしゃがむ"
+                },
+                {
+                    "en": "Twirling with one hand on the hip",
+                    "ja": "片手を腰に当ててくるくる回る"
+                },
+                {
+                    "en": "Pretending to play a trumpet",
+                    "ja": "トランペットを演奏するふりをする"
+                },
+                {
+                    "en": "Leaning against an invisible bar",
+                    "ja": "見えないバーに寄りかかる"
+                },
+                {
+                    "en": "Dancing in a disco pose",
+                    "ja": "ディスコポーズで踊る"
+                },
+                {
+                    "en": "Lying with arms and legs spread out",
+                    "ja": "腕と脚を広げて横たわる"
+                },
+                {
+                    "en": "hugging knees to chest",
+                    "ja": "膝を胸に抱える"
+                },
+                {
+                    "en": "Standing with one hand waving",
+                    "ja": "片手を振りながら立っている"
+                },
+                {
+                    "en": "Posing as if holding a big balloon",
+                    "ja": "大きな風船を持っているかのようなポーズ"
+                },
+                {
+                    "en": "Jumping with arms to the side",
+                    "ja": "腕を横に広げてジャンプする"
+                },
+                {
+                    "en": "Lying on the back with knees up",
+                    "ja": "膝を立てて仰向けに寝る"
+                },
+                {
+                    "en": "hands folded in lap",
+                    "ja": "膝の上に手を組んで"
+                },
+                {
+                    "en": "Leaning with back against an invisible wall",
+                    "ja": "見えない壁に背を向けて"
+                },
+                {
+                    "en": "Crouching",
+                    "ja": "しゃがむ"
+                },
+                {
+                    "en": "as if ready to start a race",
+                    "ja": "まるでレースを始める準備ができているかのように"
+                },
+                {
+                    "en": "Pretending to paddle a canoe",
+                    "ja": "カヌーを漕ぐ真似をする"
+                },
+                {
+                    "en": "Twirling with dress flying up",
+                    "ja": "ドレスをめくりながらくるくる回る"
+                },
+                {
+                    "en": "Dancing",
+                    "ja": "ダンシング"
+                },
+                {
+                    "en": "hands clapping above the head",
+                    "ja": "頭の上で手を叩く"
+                },
+                {
+                    "en": "Sitting with legs outstretched",
+                    "ja": "足を伸ばして座る"
+                },
+                {
+                    "en": "Standing with one foot on tiptoe",
+                    "ja": "片足をつま先立ちにする"
+                },
+                {
+                    "en": "Pretending to swim in air",
+                    "ja": "空中で泳ぐふりをする"
+                },
+                {
+                    "en": "Walking with an exaggerated stride",
+                    "ja": "大げさな歩幅で歩く"
+                },
+                {
+                    "en": "Leaning forward with hands on thighs",
+                    "ja": "手を太ももに置いて前かがみになる"
+                },
+                {
+                    "en": "resting on elbow",
+                    "ja": "肘をついて"
+                },
+                {
+                    "en": "Dancing in a salsa pose",
+                    "ja": "サルサのポーズで踊る"
+                },
+                {
+                    "en": "Pretending to shoot a basketball",
+                    "ja": "バスケットボールをシュートするふりをする"
+                },
+                {
+                    "en": "Jumping with one hand up",
+                    "ja": "片手を上げてジャンプする"
+                },
+                {
+                    "en": "Lying with hands behind the head",
+                    "ja": "手を頭の後ろに組んで横たわる"
+                },
+                {
+                    "en": "Balancing in a yoga tree pose",
+                    "ja": "ヨガのツリーポーズでバランスをとる"
+                },
+                {
+                    "en": "Kneeling with hands on hips",
+                    "ja": "腰に手を当ててひざまずく"
+                },
+                {
+                    "en": "Posing as if holding a large book",
+                    "ja": "大きな本を持っているかのようなポーズ"
+                },
+                {
+                    "en": "Dancing with both hands on hips",
+                    "ja": "両手を腰に当てて踊る"
+                },
+                {
+                    "en": "ready to jump",
+                    "ja": "ジャンプする準備"
+                },
+                {
+                    "en": "Standing with one foot slightly lifted",
+                    "ja": "片足を少し上げて立つ"
+                },
+                {
+                    "en": "Pretending to play a tennis shot",
+                    "ja": "テニスのショットを真似する"
+                },
+                {
+                    "en": "leaning forward with elbows on knees",
+                    "ja": "肘を膝に置いて前かがみになる"
+                },
+                {
+                    "en": "Walking with hands in pockets",
+                    "ja": "ポケットに手を入れて歩く"
+                },
+                {
+                    "en": "arms folded",
+                    "ja": "腕を組んで"
+                },
+                {
+                    "en": "Mimicking a boxer's pose",
+                    "ja": "ボクサーのポーズを真似る"
+                },
+                {
+                    "en": "Posing as if hailing a taxi",
+                    "ja": "タクシーを呼ぶポーズ"
+                },
+                {
+                    "en": "Lying with one arm over the eyes",
+                    "ja": "片腕を目に当てて横たわる"
+                },
+                {
+                    "en": "Kneeling with head thrown back",
+                    "ja": "頭を後ろに倒してひざまずく"
+                },
+                {
+                    "en": "Leaping with one leg extended",
+                    "ja": "片足を伸ばして跳躍する"
+                },
+                {
+                    "en": "Pretending to hold a large beach ball",
+                    "ja": "大きなビーチボールを持っているふりをする"
+                },
+                {
+                    "en": "Standing with one hand shading the eyes",
+                    "ja": "片手で目を覆って立っている"
+                },
+                {
+                    "en": "Dancing with one arm twirling a lasso",
+                    "ja": "片腕で投げ縄を回し踊る"
+                },
+                {
+                    "en": "Lying on the back",
+                    "ja": "仰向けに寝る"
+                },
+                {
+                    "en": "Jumping in a star shape",
+                    "ja": "星型にジャンプ"
+                },
+                {
+                    "en": "Posing with hands on cheeks",
+                    "ja": "頬に手を当ててポーズをとる"
+                },
+                {
+                    "en": "Sitting cross-legged with hands on knees",
+                    "ja": "手を膝に置いてあぐらをかいて座っている"
+                },
+                {
+                    "en": "elbows resting on knees",
+                    "ja": "肘を膝の上に置く"
+                },
+                {
+                    "en": "Kneeling with hands on the floor",
+                    "ja": "手を床につけてひざまずく"
+                },
+                {
+                    "en": "Standing with one hand over the heart",
+                    "ja": "片手を胸に当てて立つ"
+                },
+                {
+                    "en": "Walking with an exaggerated hip swing",
+                    "ja": "誇張した腰振りで歩く"
+                },
+                {
+                    "en": "hands braced on knees",
+                    "ja": "手を膝に当てる"
+                },
+                {
+                    "en": "one hand propping up head",
+                    "ja": "片手で頭を支える"
+                },
+                {
+                    "en": "Dancing in a flamenco pose",
+                    "ja": "フラメンコのポーズで踊る"
+                },
+                {
+                    "en": "Sitting with knees apart",
+                    "ja": "膝を広げて座る"
+                },
+                {
+                    "en": "hands on knees",
+                    "ja": "膝に手を当てる"
+                },
+                {
+                    "en": "mimicking a karate kick",
+                    "ja": "空手の蹴りを真似る"
+                },
+                {
+                    "en": "Posing as if throwing a frisbee",
+                    "ja": "フリスビーを投げているようなポーズ"
+                },
+                {
+                    "en": "Pretending to pull back a bow and arrow",
+                    "ja": "弓矢を引くふりをする"
+                },
+                {
+                    "en": "Standing with one hand behind the head",
+                    "ja": "片手を頭の後ろに当てて立つ"
+                },
+                {
+                    "en": "Kneeling with hands clasped",
+                    "ja": "手を組んでひざまずく"
+                },
+                {
+                    "en": "Lying with one leg bent",
+                    "ja": "片足を曲げて横たわる"
+                },
+                {
+                    "en": "hands behind the head",
+                    "ja": "手を頭の後ろに組む"
+                },
+                {
+                    "en": "Posing as if hugging a friend",
+                    "ja": "友達を抱きしめるようなポーズ"
+                },
+                {
+                    "en": "Dancing with one hand above the head",
+                    "ja": "片手を頭の上に上げて踊る"
+                },
+                {
+                    "en": "Sitting with hands on ankles",
+                    "ja": "足首に手を当てて座る"
+                },
+                {
+                    "en": "Standing with arms folded above the head",
+                    "ja": "腕を頭上で組んで立っている"
+                },
+                {
+                    "en": "arms outstretched",
+                    "ja": "腕を伸ばした"
+                },
+                {
+                    "en": "Pretending to climb an invisible wall",
+                    "ja": "見えない壁を登るふりをする"
+                },
+                {
+                    "en": "hands on the ground",
+                    "ja": "地面に手をついて"
+                },
+                {
+                    "en": "Walking with a spring in the step",
+                    "ja": "軽やかに歩く"
+                },
+                {
+                    "en": "Sitting with one hand on the waist",
+                    "ja": "片手を腰に当てて座る"
+                },
+                {
+                    "en": "Standing with one arm reaching out",
+                    "ja": "片腕を伸ばして立っている"
+                },
+                {
+                    "en": "Leaning against an invisible box",
+                    "ja": "見えない箱に寄りかかって"
+                },
+                {
+                    "en": "Kneeling with one arm extended upwards",
+                    "ja": "片腕を上に伸ばしてひざまずく"
+                },
+                {
+                    "en": "mimicking a high jump",
+                    "ja": "走り高跳びの真似をする"
+                },
+                {
+                    "en": "Dancing in a twist pose",
+                    "ja": "ツイストポーズで踊る"
+                },
+                {
+                    "en": "Lying with one hand under the chin",
+                    "ja": "片手を顎の下に置いて横になる"
+                },
+                {
+                    "en": "hands resting on thighs",
+                    "ja": "手を太ももに置く"
+                },
+                {
+                    "en": "Posing as if about to throw a dart",
+                    "ja": "ダーツを投げようとしているようなポーズ"
+                },
+                {
+                    "en": "mimicking a limbo dance",
+                    "ja": "リンボーダンスを真似する"
+                },
+                {
+                    "en": "Sitting with knees bent",
+                    "ja": "膝を曲げて座る"
+                },
+                {
+                    "en": "one hand on the floor",
+                    "ja": "片手を床に置く"
+                },
+                {
+                    "en": "Pretending to be in a fencing pose",
+                    "ja": "フェンシングのポーズを装う"
+                },
+                {
+                    "en": "Standing with one arm reaching to the side",
+                    "ja": "片腕を横に伸ばして立っている"
+                },
+                {
+                    "en": "Posing as if cheering",
+                    "ja": "応援するかのようにポーズをとる"
+                },
+                {
+                    "en": "one leg bent",
+                    "ja": "片足を曲げた"
+                },
+                {
+                    "en": "Dancing with arms out to the sides",
+                    "ja": "両腕を横に広げて踊る"
+                },
+                {
+                    "en": "Balancing with one foot raised behind",
+                    "ja": "片足を後ろに上げてバランスをとる"
+                },
+                {
+                    "en": "Posing as if listening to a seashell",
+                    "ja": "貝殻の音を聞いているようなポーズ"
+                },
+                {
+                    "en": "Walking with one hand brushing hair back",
+                    "ja": "片手で髪を後ろに撫でながら歩く"
+                },
+                {
+                    "en": "Leaning on an invisible railing",
+                    "ja": "見えない手すりに寄りかかる"
+                },
+                {
+                    "en": "Standing with hands behind the back",
+                    "ja": "手を背中に組んで立つ"
+                },
+                {
+                    "en": "Pretending to lift a heavy weight",
+                    "ja": "重いものを持ち上げるふりをする"
+                },
+                {
+                    "en": "Kneeling with one hand reaching forward",
+                    "ja": "片手を前に伸ばしてひざまずく"
+                },
+                {
+                    "en": "Lying with hands clasped over the stomach",
+                    "ja": "お腹の上に手を組んで横たわる"
+                },
+                {
+                    "en": "Dancing in a cha-cha-cha pose",
+                    "ja": "チャチャチャのポーズで踊る"
+                },
+                {
+                    "en": "Jumping with knees pulled up",
+                    "ja": "膝を上げてジャンプする"
+                },
+                {
+                    "en": "Sitting with hands on hips",
+                    "ja": "腰に手を当てて座る"
+                },
+                {
+                    "en": "Leaning on an invisible countertop",
+                    "ja": "見えないカウンターに寄りかかる"
+                },
+                {
+                    "en": "Posing as if blowing bubbles",
+                    "ja": "シャボン玉を吹いているようなポーズ"
+                },
+                {
+                    "en": "Pretending to be a superhero in flight",
+                    "ja": "飛行中のスーパーヒーローのふり"
+                },
+                {
+                    "en": "Standing on one leg with hands on hips",
+                    "ja": "片足で立ち、手を腰に当てる"
+                },
+                {
+                    "en": "mimicking a crane pose",
+                    "ja": "鶴のポーズを真似る"
+                },
+                {
+                    "en": "hands clasped over knee",
+                    "ja": "膝の上で手を組む"
+                },
+                {
+                    "en": "Mimicking shooting an arrow",
+                    "ja": "矢を射る真似をする"
+                },
+                {
+                    "en": "Dancing with arms swinging side to side",
+                    "ja": "腕を左右に振りながら踊る"
+                },
+                {
+                    "en": "Leaning on an invisible fence",
+                    "ja": "見えない柵に寄りかかる"
+                },
+                {
+                    "en": "Kneeling with hands clasped in prayer",
+                    "ja": "手を合わせてひざまずいて祈る"
+                },
+                {
+                    "en": "Standing with hands clasped behind the back",
+                    "ja": "両手を背中で組んで立っている"
+                },
+                {
+                    "en": "Pretending to hold a large picture frame",
+                    "ja": "大きな額縁を持っているふりをする"
+                },
+                {
+                    "en": "Walking with arms swinging in rhythm",
+                    "ja": "腕をリズムに合わせて振りながら歩く"
+                },
+                {
+                    "en": "Lying with one leg bent at the knee",
+                    "ja": "片足を膝で曲げて横たわる"
+                },
+                {
+                    "en": "Jumping with one arm pointing upwards",
+                    "ja": "片腕を上に伸ばしてジャンプする"
+                },
+                {
+                    "en": "Sitting with one hand running through the hair",
+                    "ja": "片手で髪を撫でながら座っている"
+                },
+                {
+                    "en": "Posing as if playing a trumpet",
+                    "ja": "トランペットを演奏しているようなポーズ"
+                },
+                {
+                    "en": "Balancing on one foot with arms in the air",
+                    "ja": "片足でバランスを取り、腕を空中に上げる"
+                },
+                {
+                    "en": "Leaning with both hands on the thighs",
+                    "ja": "両手を太ももに置いて寄りかかる"
+                },
+                {
+                    "en": "Pretending to be in a surfing pose",
+                    "ja": "サーフィンのポーズを装う"
+                },
+                {
+                    "en": "arm supporting head",
+                    "ja": "頭を支える腕"
+                },
+                {
+                    "en": "Standing with arms stretched out",
+                    "ja": "腕を伸ばして立っている"
+                },
+                {
+                    "en": "Kneeling with one hand reaching upwards",
+                    "ja": "片手を上に伸ばしてひざまずく"
+                },
+                {
+                    "en": "Sitting with hands in the lap",
+                    "ja": "膝の上に手を置いて座っている"
+                },
+                {
+                    "en": "Posing as if holding a beach ball",
+                    "ja": "ビーチボールを持っているかのようなポーズ"
+                },
+                {
+                    "en": "Leaning back with hands on the hips",
+                    "ja": "腰に手を当てて後ろに傾く"
+                },
+                {
+                    "en": "Lying with one arm draped over eyes",
+                    "ja": "片腕を目に当てて横たわる"
+                },
+                {
+                    "en": "Walking with exaggerated arm swings",
+                    "ja": "腕を誇張して振って歩く"
+                },
+                {
+                    "en": "Pretending to fly like a bird",
+                    "ja": "鳥のように飛ぶふりをする"
+                },
+                {
+                    "en": "arm extended in a stop gesture",
+                    "ja": "停止のジェスチャーで腕を伸ばした"
+                },
+                {
+                    "en": "Leaning against an invisible car",
+                    "ja": "見えない車に寄りかかる"
+                },
+                {
+                    "en": "Jumping in a ballet leap",
+                    "ja": "バレエの跳躍"
+                },
+                {
+                    "en": "Kneeling with one arm resting on the knee",
+                    "ja": "片腕を膝に置いてひざまずく"
+                },
+                {
+                    "en": "Posing as if holding a large bouquet",
+                    "ja": "大きな花束を持っているかのようなポーズ"
+                },
+                {
+                    "en": "chin resting on hands",
+                    "ja": "顎を両手に乗せる"
+                },
+                {
+                    "en": "Balancing on one foot with other leg extended",
+                    "ja": "片足を伸ばしてもう片方の足でバランスをとる"
+                },
+                {
+                    "en": "Walking with hands clasped behind back",
+                    "ja": "手を後ろで組んで歩く"
+                },
+                {
+                    "en": "Dancing with one arm swinging overhead",
+                    "ja": "片腕を頭上に振りながら踊る"
+                },
+                {
+                    "en": "Standing with hands in pockets",
+                    "ja": "ポケットに手を入れて立っている"
+                },
+                {
+                    "en": "Kneeling with one hand on the heart",
+                    "ja": "片手を胸に当ててひざまずく"
+                },
+                {
+                    "en": "Pretending to skip rope",
+                    "ja": "縄跳びの真似をする"
+                },
+                {
+                    "en": "Lying with one hand under the cheek",
+                    "ja": "片手を頬の下に当てて横たわる"
+                },
+                {
+                    "en": "Standing with one hand touching the chin",
+                    "ja": "片手を顎に当てて立っている"
+                },
+                {
+                    "en": "Jumping with arms forming a 'Y' shape",
+                    "ja": "腕をY字型に組んでジャンプする"
+                },
+                {
+                    "en": "Posing as if holding a guitar",
+                    "ja": "ギターを持っているかのようなポーズ"
+                },
+                {
+                    "en": "Leaning with one elbow on an invisible wall",
+                    "ja": "見えない壁に片肘をついて寄りかかる"
+                },
+                {
+                    "en": "Walking in a strutting pose",
+                    "ja": "気取って歩くポーズ"
+                },
+                {
+                    "en": "Dancing with one hand extended outwards",
+                    "ja": "片手を伸ばして踊る"
+                },
+                {
+                    "en": "Standing with hands on the waist",
+                    "ja": "腰に手を当てて立つ"
+                },
+                {
+                    "en": "Kneeling with one hand on the floor",
+                    "ja": "片手を床につけてひざまずく"
+                },
+                {
+                    "en": "Sitting with hands holding the feet",
+                    "ja": "両手で足を押さえて座る"
+                },
+                {
+                    "en": "Pretending to box",
+                    "ja": "ボクシングのふりをする"
+                },
+                {
+                    "en": "Balancing in a warrior yoga pose",
+                    "ja": "戦士のヨガのポーズでバランスをとる"
+                },
+                {
+                    "en": "Leaning against an invisible tree",
+                    "ja": "見えない木に寄りかかる"
+                },
+                {
+                    "en": "Posing as if pulling a rope",
+                    "ja": "ロープを引っ張っているようなポーズ"
+                },
+                {
+                    "en": "Standing with one arm raised",
+                    "ja": "片腕を上げて立っている"
+                },
+                {
+                    "en": "Walking with a prancing step",
+                    "ja": "跳ねるように歩く"
+                },
+                {
+                    "en": "Lying with knees pulled to chest",
+                    "ja": "膝を胸に引き寄せて横になる"
+                },
+                {
+                    "en": "mimicking a frog leap",
+                    "ja": "カエルの跳躍を真似る"
+                },
+                {
+                    "en": "Dancing in a moonwalk pose",
+                    "ja": "ムーンウォークのポーズで踊る"
+                },
+                {
+                    "en": "Sitting with legs crossed",
+                    "ja": "足を組んで座っている"
+                },
+                {
+                    "en": "hands on ankles",
+                    "ja": "足首に手を当てる"
+                },
+                {
+                    "en": "Kneeling with hands resting on lap",
+                    "ja": "手を膝の上に置いてひざまずく"
+                },
+                {
+                    "en": "Pretending to walk a tightrope",
+                    "ja": "綱渡りの真似をする"
+                },
+                {
+                    "en": "Posing as if about to hug someone",
+                    "ja": "誰かを抱きしめようとするようなポーズ"
+                },
+                {
+                    "en": "Standing with arms crossed at the waist",
+                    "ja": "腕を腰のところで組んで立っている"
+                },
+                {
+                    "en": "Walking with one hand swinging a lasso",
+                    "ja": "片手で投げ縄を振りながら歩く"
+                },
+                {
+                    "en": "Leaning forward with hands on the hips",
+                    "ja": "腰に手を当てて前かがみになる"
+                },
+                {
+                    "en": "Balancing on one foot with arms extended",
+                    "ja": "片足でバランスを取りながら腕を伸ばします"
+                },
+                {
+                    "en": "Dancing in a tango pose",
+                    "ja": "タンゴのポーズで踊る"
+                },
+                {
+                    "en": "Sitting with hands holding onto an invisible rail",
+                    "ja": "見えない手すりに手をつかんで座っている"
+                },
+                {
+                    "en": "Standing with one hand touching the forehead",
+                    "ja": "片手を額に当てて立っている"
+                },
+                {
+                    "en": "Pretending to spin a basketball",
+                    "ja": "バスケットボールを回すふりをする"
+                },
+                {
+                    "en": "one hand under the head",
+                    "ja": "片手を頭の下に置く"
+                },
+                {
+                    "en": "Walking with a swagger",
+                    "ja": "威勢よく歩く"
+                },
+                {
+                    "en": "hands forming a heart shape",
+                    "ja": "ハートの形を作る手"
+                },
+                {
+                    "en": "Leaning on an invisible window",
+                    "ja": "見えない窓に寄りかかる"
+                },
+                {
+                    "en": "Posing as if whispering a secret",
+                    "ja": "秘密をささやくようなポーズ"
+                },
+                {
+                    "en": "Sitting with one hand on the floor",
+                    "ja": "片手を床に置いて座る"
+                },
+                {
+                    "en": "Balancing in a dancer's pose",
+                    "ja": "ダンサーのポーズでバランスをとる"
+                },
+                {
+                    "en": "Pretending to play the drums",
+                    "ja": "ドラムを演奏するふりをする"
+                },
+                {
+                    "en": "arms crossed over chest",
+                    "ja": "腕を胸の前で組む"
+                },
+                {
+                    "en": "Jumping with arms extended forward",
+                    "ja": "腕を前に伸ばしてジャンプする"
+                },
+                {
+                    "en": "Walking with hands touching the ground",
+                    "ja": "手を地面につけて歩く"
+                },
+                {
+                    "en": "Standing with hands on the hips",
+                    "ja": "腰に手を当てて立つ"
+                },
+                {
+                    "en": "one foot forward",
+                    "ja": "片足を前に出す"
+                },
+                {
+                    "en": "Dancing in a hip hop style",
+                    "ja": "ヒップホップスタイルのダンス"
+                },
+                {
+                    "en": "Leaning with hands on an invisible counter",
+                    "ja": "見えないカウンターに手を添えて"
+                },
+                {
+                    "en": "Posing as if singing into a microphone",
+                    "ja": "マイクに向かって歌っているかのようなポーズ"
+                },
+                {
+                    "en": "Kneeling with one hand on the hip",
+                    "ja": "片手を腰に当ててひざまずく"
+                },
+                {
+                    "en": "Standing on tiptoes with hands reaching upwards",
+                    "ja": "つま先立ちで手を上に伸ばす"
+                },
+                {
+                    "en": "Pretending to play the violin",
+                    "ja": "バイオリンを弾くふりをする"
+                },
+                {
+                    "en": "Balancing in a tree pose",
+                    "ja": "木のポーズでバランスをとる"
+                },
+                {
+                    "en": "Lying with one arm stretched out",
+                    "ja": "片腕を伸ばして横たわる"
+                },
+                {
+                    "en": "Walking with an exaggerated tip-toe step",
+                    "ja": "つま先立ちで大げさに歩く"
+                },
+                {
+                    "en": "Jumping with arms out to the side",
+                    "ja": "腕を横に広げてジャンプする"
+                },
+                {
+                    "en": "Posing as if painting a picture",
+                    "ja": "絵を描くようなポーズ"
+                },
+                {
+                    "en": "Leaning with one elbow on an invisible ledge",
+                    "ja": "見えない棚に片肘をかけて寄りかかる"
+                },
+                {
+                    "en": "Dancing in a waltz pose",
+                    "ja": "ワルツのポーズで踊る"
+                },
+                {
+                    "en": "one hand on knee",
+                    "ja": "片手を膝の上に置く"
+                },
+                {
+                    "en": "Pretending to hug a teddy bear",
+                    "ja": "テディベアを抱きしめるふりをする"
+                },
+                {
+                    "en": "Dancing with an imaginary puppy",
+                    "ja": "空想上の子犬と踊る"
+                },
+                {
+                    "en": "Kneeling and mimicking a cat's stretch",
+                    "ja": "膝をついて猫の伸びを真似る"
+                },
+                {
+                    "en": "Standing with hands clasped",
+                    "ja": "手を組んで立っている"
+                },
+                {
+                    "en": "eyes looking upwards",
+                    "ja": "上を向いた目"
+                },
+                {
+                    "en": "Sitting with hands forming a heart shape",
+                    "ja": "手をハート型にして座っている"
+                },
+                {
+                    "en": "Mimicking holding a cute bunny",
+                    "ja": "かわいいウサギを抱く真似をする"
+                },
+                {
+                    "en": "Jumping with joy",
+                    "ja": "喜びに飛び跳ねる"
+                },
+                {
+                    "en": "as if holding a birthday cake",
+                    "ja": "誕生日ケーキを持っているかのように"
+                },
+                {
+                    "en": "Leaning and pretending to pet an invisible kitten",
+                    "ja": "見えない子猫を撫でるふりをする"
+                },
+                {
+                    "en": "Pretending to hold a cute little umbrella",
+                    "ja": "かわいい小さな傘を持っているふりをする"
+                },
+                {
+                    "en": "legs kicked up in the air",
+                    "ja": "足を空中に蹴り上げた"
+                },
+                {
+                    "en": "Dancing as if surrounded by butterflies",
+                    "ja": "蝶々に囲まれたように踊る"
+                },
+                {
+                    "en": "pretending to be a flamingo",
+                    "ja": "フラミンゴのふりをする"
+                },
+                {
+                    "en": "pretending to tie an oversized bow",
+                    "ja": "特大のリボンを結ぶふりをする"
+                },
+                {
+                    "en": "Standing and mimicking holding a bunch of balloons",
+                    "ja": "立って風船の束を持っている真似をする"
+                },
+                {
+                    "en": "as if in a sunny day",
+                    "ja": "晴れた日のように"
+                },
+                {
+                    "en": "pretending to make a snow angel",
+                    "ja": "雪の天使を作るふりをする"
+                },
+                {
+                    "en": "Posing as if holding a baby duck",
+                    "ja": "赤ちゃんアヒルを抱いているようなポーズ"
+                },
+                {
+                    "en": "pretending to catch a floating feather",
+                    "ja": "浮いている羽を捕まえるふりをする"
+                },
+                {
+                    "en": "Standing with hands on cheeks",
+                    "ja": "頬に手を当てて立っている"
+                },
+                {
+                    "en": "surprised expression",
+                    "ja": "驚いた表情"
+                },
+                {
+                    "en": "Pretending to have a tea party with invisible toys",
+                    "ja": "見えないおもちゃでお茶会をするふりをする"
+                },
+                {
+                    "en": "Kneeling and mimicking feeding a little bird",
+                    "ja": "ひざまずいて小鳥に餌をやる真似をする"
+                },
+                {
+                    "en": "pretending to read a fairy tale book",
+                    "ja": "おとぎ話の本を読んでいるふりをする"
+                },
+                {
+                    "en": "pretending to follow a butterfly",
+                    "ja": "蝶を追いかけるふりをする"
+                },
+                {
+                    "en": "mimicking a bird in flight",
+                    "ja": "飛んでいる鳥の真似をする"
+                },
+                {
+                    "en": "pretending to open a gift box",
+                    "ja": "ギフトボックスを開けるふりをする"
+                },
+                {
+                    "en": "pretending to hold a bouquet of daisies",
+                    "ja": "ヒナギクの花束を持っているふりをする"
+                },
+                {
+                    "en": "pretending to twirl a ribbon",
+                    "ja": "リボンをくるくる回すふりをする"
+                },
+                {
+                    "en": "Pretending to cradle a baby animal",
+                    "ja": "赤ちゃん動物を抱っこするふりをする"
+                },
+                {
+                    "en": "Kneeling and mimicking playing with a kitten",
+                    "ja": "ひざまずいて子猫と遊ぶ真似をする"
+                },
+                {
+                    "en": "pretending to hold a teddy bear's tea party",
+                    "ja": "テディベアのティーパーティーを装う"
+                },
+                {
+                    "en": "cute",
+                    "ja": "かわいい"
+                },
+                {
+                    "en": "confident expression",
+                    "ja": "自信に満ちた表情"
+                },
+                {
+                    "en": "pretending to look at clouds",
+                    "ja": "雲を見ているふりをする"
+                },
+                {
+                    "en": "mimicking catching a butterfly",
+                    "ja": "蝶を捕まえる真似をする"
+                },
+                {
+                    "en": "pretending to carry a baby animal",
+                    "ja": "赤ちゃん動物を抱っこするふりをする"
+                },
+                {
+                    "en": "mimicking a cute pose from ballet",
+                    "ja": "バレエのかわいいポーズを真似する"
+                },
+                {
+                    "en": "Pretending to play with a toy train",
+                    "ja": "おもちゃの電車で遊ぶふりをする"
+                },
+                {
+                    "en": "pretending to blow dandelion seeds",
+                    "ja": "タンポポの種を吹き飛ばすふりをする"
+                },
+                {
+                    "en": "pretending to hold a sunflower",
+                    "ja": "ひまわりを持っているふりをする"
+                },
+                {
+                    "en": "pretending to doodle in a diary",
+                    "ja": "日記に落書きするふりをする"
+                },
+                {
+                    "en": "Kneeling and mimicking petting an imaginary pet",
+                    "ja": "ひざまずいて、想像上のペットを撫でる真似をする"
+                },
+                {
+                    "en": "Pretending to hold a big lollipop",
+                    "ja": "大きなロリポップを持っているふりをする"
+                },
+                {
+                    "en": "pretending to pull a toy duck",
+                    "ja": "おもちゃのアヒルを引っ張るふりをする"
+                },
+                {
+                    "en": "pretending to pop bubbles",
+                    "ja": "シャボン玉をはじくふりをする"
+                },
+                {
+                    "en": "Balancing",
+                    "ja": "バランス調整"
+                },
+                {
+                    "en": "pretending to walk on a rainbow",
+                    "ja": "虹の上を歩いているふりをする"
+                },
+                {
+                    "en": "pretending to hold a small kitten",
+                    "ja": "小さな子猫を抱いているふりをする"
+                },
+                {
+                    "en": "pretending to smell a big flower",
+                    "ja": "大きな花の香りを嗅ぐふりをする"
+                },
+                {
+                    "en": "pretending to be a cute fairy",
+                    "ja": "かわいい妖精のふりをする"
+                },
+                {
+                    "en": "pretending to look at a magic crystal ball",
+                    "ja": "魔法の水晶玉を見​​ているふりをする"
+                },
+                {
+                    "en": "Kneeling and mimicking blowing kisses",
+                    "ja": "ひざまずいてキスをする真似をする"
+                },
+                {
+                    "en": "Pretending to slip on a banana peel",
+                    "ja": "バナナの皮で滑ったふりをする"
+                },
+                {
+                    "en": "Mimicking the walk of a penguin",
+                    "ja": "ペンギンの歩き方を真似る"
+                },
+                {
+                    "en": "Standing and pretending to juggle invisible balls",
+                    "ja": "立って見えないボールをジャグリングするふりをする"
+                },
+                {
+                    "en": "feet in the air as if walking on the ceiling",
+                    "ja": "天井を歩いているかのように足を空中に上げる"
+                },
+                {
+                    "en": "Dancing as if doing the chicken dance",
+                    "ja": "チキンダンスを踊っているかのように踊る"
+                },
+                {
+                    "en": "Pretending to be stuck in a large bubble",
+                    "ja": "大きな泡の中に閉じ込められているふりをする"
+                },
+                {
+                    "en": "Walking as if on hot sand",
+                    "ja": "熱い砂の上を歩くように"
+                },
+                {
+                    "en": "Jumping as if on a pogo stick",
+                    "ja": "ポゴスティックのようにジャンプする"
+                },
+                {
+                    "en": "making a silly face",
+                    "ja": "変な顔をする"
+                },
+                {
+                    "en": "Mimicking picking up a heavy weight and dropping it",
+                    "ja": "重いものを持ち上げて落とす真似をする"
+                },
+                {
+                    "en": "Posing as if caught mid-sneeze",
+                    "ja": "くしゃみをしているところを捉えられたようなポーズ"
+                },
+                {
+                    "en": "pretending to laugh uncontrollably",
+                    "ja": "抑えきれないほど笑っているふりをする"
+                },
+                {
+                    "en": "Kneeling and pretending to propose with an oversized ring",
+                    "ja": "ひざまずいて特大の指輪でプロポーズするふりをする"
+                },
+                {
+                    "en": "Pretending to run from a swarm of bees",
+                    "ja": "蜂の群れから逃げるふりをする"
+                },
+                {
+                    "en": "Mimicking a clumsy ballet dancer",
+                    "ja": "不器用なバレエダンサーの真似をする"
+                },
+                {
+                    "en": "pretending to spin a pizza dough",
+                    "ja": "ピザ生地を回すふりをする"
+                },
+                {
+                    "en": "Jumping as if scared by a mouse",
+                    "ja": "ネズミに驚かされたかのように飛び跳ねる"
+                },
+                {
+                    "en": "pretending to walk on a tightrope",
+                    "ja": "綱渡りのふりをする"
+                },
+                {
+                    "en": "Walking as if stepping on legos",
+                    "ja": "レゴを踏むように歩く"
+                },
+                {
+                    "en": "pretending to get blown away by the wind",
+                    "ja": "風に吹き飛ばされるふりをする"
+                },
+                {
+                    "en": "Pretending to hold a fish by its tail",
+                    "ja": "魚の尻尾をつかむふりをする"
+                },
+                {
+                    "en": "mimicking a swimming pose",
+                    "ja": "水泳のポーズを真似る"
+                },
+                {
+                    "en": "Posing as if pulling a stubborn donkey",
+                    "ja": "頑固なロバを引っ張っているようなポーズ"
+                },
+                {
+                    "en": "Dancing like a robot",
+                    "ja": "ロボットのように踊る"
+                },
+                {
+                    "en": "Pretending to be stuck in a box",
+                    "ja": "箱の中に閉じ込められているふりをする"
+                },
+                {
+                    "en": "Mimicking a monkey scratching its head",
+                    "ja": "猿が頭を掻く真似をする"
+                },
+                {
+                    "en": "Kneeling and pretending to search for lost glasses",
+                    "ja": "ひざまずいて、失くした眼鏡を探しているふりをする"
+                },
+                {
+                    "en": "pretending to be a starfish",
+                    "ja": "ヒトデのふりをする"
+                },
+                {
+                    "en": "pretending to be a scarecrow",
+                    "ja": "かかしのふりをする"
+                },
+                {
+                    "en": "Standing and pretending to be stuck in a rainstorm without an umbrella",
+                    "ja": "傘を持たずに暴風雨の中にいるふりをする"
+                },
+                {
+                    "en": "Pretending to be a pirate with a hook hand",
+                    "ja": "フックハンドで海賊のふりをする"
+                },
+                {
+                    "en": "Walking as if wearing oversized clown shoes",
+                    "ja": "まるで特大のピエロの靴を履いているかのように歩く"
+                },
+                {
+                    "en": "Mimicking eating a giant sandwich",
+                    "ja": "巨大なサンドイッチを食べる真似をする"
+                },
+                {
+                    "en": "Jumping as if being shocked by static electricity",
+                    "ja": "静電気でショックを受けたかのように飛び上がる"
+                },
+                {
+                    "en": "Pretending to struggle with an invisible wind",
+                    "ja": "目に見えない風と格闘するふりをする"
+                },
+                {
+                    "en": "pretending to laugh at a joke",
+                    "ja": "冗談に笑うふりをする"
+                },
+                {
+                    "en": "Posing as if surprised by an imaginary friend",
+                    "ja": "空想上の友達に驚いているようなポーズ"
+                },
+                {
+                    "en": "pretending to paddle in a canoe",
+                    "ja": "カヌーを漕ぐふりをする"
+                },
+                {
+                    "en": "Pretending to have stepped in bubble gum",
+                    "ja": "風船ガムを踏んだふりをする"
+                },
+                {
+                    "en": "making a 'stuck out tongue' face",
+                    "ja": "舌を出した顔を作る"
+                },
+                {
+                    "en": "pretending to be surfing on a board",
+                    "ja": "ボードに乗ってサーフィンをしているふりをする"
+                },
+                {
+                    "en": "pretending to fly like superman",
+                    "ja": "スーパーマンのように飛ぶふりをする"
+                },
+                {
+                    "en": "pretending to paint a masterpiece",
+                    "ja": "傑作を描くふりをする"
+                },
+                {
+                    "en": "Dancing like a zombie",
+                    "ja": "ゾンビのように踊る"
+                },
+                {
+                    "en": "Pretending to play a guitar solo",
+                    "ja": "ギターソロを弾くふりをする"
+                },
+                {
+                    "en": "Posing as if caught in a spider web",
+                    "ja": "蜘蛛の巣に捕まったようなポーズ"
+                },
+                {
+                    "en": "pretending to be driving a race car",
+                    "ja": "レースカーを運転しているふりをする"
+                },
+                {
+                    "en": "Pretending to be a statue",
+                    "ja": "彫像のふりをする"
+                },
+                {
+                    "en": "solo focus",
+                    "ja": "ギターソロを弾くふりをする"
+                },
+                {
+                    "en": "grabbing from behind",
+                    "ja": "つかむ"
+                },
+                {
+                    "en": "thigh grab",
+                    "ja": "太ももをまたぐ"
+                },
+                {
+                    "en": "arm support",
+                    "ja": "頭を支える腕"
+                },
+                {
+                    "en": "censored",
+                    "ja": "検閲済み"
+                },
+                {
+                    "en": "oral",
+                    "ja": "オーラル"
+                },
+                {
+                    "en": "nude",
+                    "ja": "ヌード"
+                },
+                {
+                    "en": "spitroast",
+                    "ja": "串焼き"
+                },
+                {
+                    "en": "realistic",
+                    "ja": "現実的"
+                },
+                {
+                    "en": "double penetration",
+                    "ja": "ダブル挿入"
+                },
+                {
+                    "en": "completely nude",
+                    "ja": "完全に裸"
+                },
+                {
+                    "en": "spooning",
+                    "ja": "スプーン"
+                },
+                {
+                    "en": "photorealistic",
+                    "ja": "フォトリアリスティック"
+                },
+                {
+                    "en": "mole",
+                    "ja": "ほくろ"
+                },
+                {
+                    "en": "blur censor",
+                    "ja": "ぼかし検閲"
+                },
+                {
+                    "en": "artist name",
+                    "ja": "アーティスト名"
+                },
+                {
+                    "en": "watermark",
+                    "ja": "透かし"
+                }
+            ]
+        },
+        {
+            "id": "scene_context",
+            "name": "情景/状況",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "indoors",
+                    "ja": "屋内"
+                },
+                {
+                    "en": "outdoors",
+                    "ja": "屋外"
+                },
+                {
+                    "en": "office",
+                    "ja": "オフィス"
+                },
+                {
+                    "en": "school",
+                    "ja": "学校"
+                },
+                {
+                    "en": "bedroom",
+                    "ja": "寝室"
+                },
+                {
+                    "en": "bathroom",
+                    "ja": "バスルーム"
+                },
+                {
+                    "en": "kitchen",
+                    "ja": "台所"
+                },
+                {
+                    "en": "living room",
+                    "ja": "リビングルーム"
+                },
+                {
+                    "en": "street",
+                    "ja": "通り"
+                },
+                {
+                    "en": "park",
+                    "ja": "公園"
+                },
+                {
+                    "en": "beach",
+                    "ja": "ビーチ"
+                },
+                {
+                    "en": "pool",
+                    "ja": "プール"
+                },
+                {
+                    "en": "against wall",
+                    "ja": "壁に向かって"
+                },
+                {
+                    "en": "on bed",
+                    "ja": "ベッドの上"
+                },
+                {
+                    "en": "on floor",
+                    "ja": "床の上"
+                },
+                {
+                    "en": "in water",
+                    "ja": "水中で"
+                },
+                {
+                    "en": "formal",
+                    "ja": "フォーマル"
+                },
+                {
+                    "en": "casual",
+                    "ja": "カジュアル"
+                },
+                {
+                    "en": "cosplay",
+                    "ja": "コスプレ"
+                },
+                {
+                    "en": "raining",
+                    "ja": "雨が降っている"
+                },
+                {
+                    "en": "snowing",
+                    "ja": "雪が降る"
+                },
+                {
+                    "en": "sunny",
+                    "ja": "晴れ"
+                },
+                {
+                    "en": "day",
+                    "ja": "日"
+                },
+                {
+                    "en": "sunset",
+                    "ja": "日没"
+                },
+                {
+                    "en": "sunrise",
+                    "ja": "日の出"
+                },
+                {
+                    "en": "bed",
+                    "ja": "寝室"
+                }
+            ]
+        },
+        {
+            "id": "action_relationship",
+            "name": "行為/関係性",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "sex",
+                    "ja": "セックス"
+                },
+                {
+                    "en": "doggystyle",
+                    "ja": "後背位"
+                },
+                {
+                    "en": "standing sex",
+                    "ja": "立ちセックス"
+                },
+                {
+                    "en": "clothed sex",
+                    "ja": "着衣セックス"
+                },
+                {
+                    "en": "fellatio",
+                    "ja": "フェラチオ"
+                },
+                {
+                    "en": "cunnilingus",
+                    "ja": "クンニリングス"
+                },
+                {
+                    "en": "anal",
+                    "ja": "アナル"
+                },
+                {
+                    "en": "vaginal",
+                    "ja": "膣"
+                },
+                {
+                    "en": "handjob",
+                    "ja": "手コキ"
+                },
+                {
+                    "en": "footjob",
+                    "ja": "足コキ"
+                },
+                {
+                    "en": "titjob",
+                    "ja": "パイズリ"
+                },
+                {
+                    "en": "rape",
+                    "ja": "レイプ"
+                },
+                {
+                    "en": "gangbang",
+                    "ja": "輪姦"
+                },
+                {
+                    "en": "threesome",
+                    "ja": "三人組"
+                },
+                {
+                    "en": "mmf threesome",
+                    "ja": "3P"
+                },
+                {
+                    "en": "ffm threesome",
+                    "ja": "2人組の3P"
+                },
+                {
+                    "en": "foursome",
+                    "ja": "フォーサム"
+                },
+                {
+                    "en": "group sex",
+                    "ja": "グループセックス"
+                },
+                {
+                    "en": "onee-shota",
+                    "ja": "おねショタ"
+                },
+                {
+                    "en": "yaoi",
+                    "ja": "やおい"
+                },
+                {
+                    "en": "yuri",
+                    "ja": "ユリ"
+                },
+                {
+                    "en": "incest",
+                    "ja": "近親相姦"
+                },
+                {
+                    "en": "bdsm",
+                    "ja": "BDSM"
+                },
+                {
+                    "en": " bondage",
+                    "ja": "緊縛"
+                },
+                {
+                    "en": "spanking",
+                    "ja": "スパンキング"
+                },
+                {
+                    "en": "fisting",
+                    "ja": "フィスティング"
+                },
+                {
+                    "en": "sex from behind",
+                    "ja": "セックス"
+                }
+            ]
+        },
+        {
+            "id": "accessories",
+            "name": "アクセサリー",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "necklace",
+                    "ja": "ネックレス"
+                },
+                {
+                    "en": "earrings",
+                    "ja": "イヤリング"
+                },
+                {
+                    "en": "bracelet",
+                    "ja": "ブレスレット"
+                },
+                {
+                    "en": "ring",
+                    "ja": "指輪"
+                },
+                {
+                    "en": "choker",
+                    "ja": "チョーカー"
+                },
+                {
+                    "en": "hair ornament",
+                    "ja": "髪飾り"
+                },
+                {
+                    "en": "headband",
+                    "ja": "ヘッドバンド"
+                },
+                {
+                    "en": "hairpin",
+                    "ja": "ヘアピン"
+                },
+                {
+                    "en": "piercing",
+                    "ja": "ピアス"
+                },
+                {
+                    "en": "tattoo",
+                    "ja": "入れ墨"
+                },
+                {
+                    "en": "mask",
+                    "ja": "マスク"
+                },
+                {
+                    "en": "eyepatch",
+                    "ja": "眼帯"
+                },
+                {
+                    "en": "mosaic censoring",
+                    "ja": "指輪"
+                },
+                {
+                    "en": "fingering",
+                    "ja": "指輪"
+                }
+            ]
+        },
+        {
+            "id": "expression",
+            "name": "表情",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "smile",
+                    "ja": "笑顔"
+                },
+                {
+                    "en": "laughing",
+                    "ja": "笑い"
+                },
+                {
+                    "en": "blush",
+                    "ja": "赤面"
+                },
+                {
+                    "en": "embarrassed",
+                    "ja": "恥ずかしい"
+                },
+                {
+                    "en": "angry",
+                    "ja": "怒り"
+                },
+                {
+                    "en": "sad",
+                    "ja": "悲しい"
+                },
+                {
+                    "en": "crying",
+                    "ja": "泣いている"
+                },
+                {
+                    "en": "shocked",
+                    "ja": "ショックを受けた"
+                },
+                {
+                    "en": "confused",
+                    "ja": "混乱した"
+                },
+                {
+                    "en": "ahegao",
+                    "ja": "アヘ顔"
+                },
+                {
+                    "en": "ecstasy",
+                    "ja": "エクスタシー"
+                },
+                {
+                    "en": "pain",
+                    "ja": "痛み"
+                },
+                {
+                    "en": "pleasure",
+                    "ja": "喜び"
+                }
+            ]
+        },
+        {
+            "id": "camera_angle",
+            "name": "カメラアングル",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "low angle",
+                    "ja": "ローアングル"
+                },
+                {
+                    "en": "high angle",
+                    "ja": "ハイアングル"
+                },
+                {
+                    "en": "eye level",
+                    "ja": "目線の高さ"
+                },
+                {
+                    "en": "dutch angle",
+                    "ja": "ダッチアングル"
+                },
+                {
+                    "en": "character focus",
+                    "ja": "キャラクターフォーカス"
+                },
+                {
+                    "en": "close to viewer",
+                    "ja": "視聴者に近い"
+                },
+                {
+                    "en": "multiple views",
+                    "ja": "複数のビュー"
+                },
+                {
+                    "en": "dynamic angle",
+                    "ja": "ダイナミックアングル"
+                },
+                {
+                    "en": "intense angle",
+                    "ja": "強烈な角度"
+                },
+                {
+                    "en": "cinematic angle",
+                    "ja": "映画のアングル"
+                },
+                {
+                    "en": "front view",
+                    "ja": "正面図"
+                },
+                {
+                    "en": "side view",
+                    "ja": "側面図"
+                },
+                {
+                    "en": "bird's-eye view",
+                    "ja": "鳥瞰図"
+                },
+                {
+                    "en": "rear view",
+                    "ja": "リアビュー"
+                },
+                {
+                    "en": "low-angle below",
+                    "ja": "下のローアングル"
+                },
+                {
+                    "en": "ceiling",
+                    "ja": "シーリング"
+                },
+                {
+                    "en": "fisheye lens",
+                    "ja": "魚眼レンズ"
+                },
+                {
+                    "en": "panty shot",
+                    "ja": "パンチラ"
+                },
+                {
+                    "en": "upskirt",
+                    "ja": "スカートの中"
+                },
+                {
+                    "en": "couple sitting",
+                    "ja": "座っているカップル"
+                },
+                {
+                    "en": "cheek-to-cheek",
+                    "ja": "頬を合わせる"
+                },
+                {
+                    "en": "heads together",
+                    "ja": "頭を合わせて"
+                },
+                {
+                    "en": "portrait",
+                    "ja": "肖像画"
+                },
+                {
+                    "en": "cowboy shot",
+                    "ja": "カウボーイショット"
+                },
+                {
+                    "en": "face only",
+                    "ja": "顔のみ"
+                },
+                {
+                    "en": "head_out_of_frame",
+                    "ja": "フレーム外の頭部"
+                },
+                {
+                    "en": "feet out of frame",
+                    "ja": "フレームから外れた足"
+                },
+                {
+                    "en": "wide shot",
+                    "ja": "ワイドショット"
+                },
+                {
+                    "en": "very wide shot",
+                    "ja": "非常にワイドショット"
+                },
+                {
+                    "en": "spoken heart",
+                    "ja": "心の声"
+                },
+                {
+                    "en": "spoken ellipsis",
+                    "ja": "音声省略記号"
+                },
+                {
+                    "en": "spoken_question_mark",
+                    "ja": "質問マーク"
+                }
+            ]
+        },
+        {
+            "id": "composition",
+            "name": "構図",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "full body",
+                    "ja": "全身"
+                },
+                {
+                    "en": "upper body",
+                    "ja": "上半身"
+                },
+                {
+                    "en": "close-up",
+                    "ja": "閉じる"
+                },
+                {
+                    "en": "rule of thirds",
+                    "ja": "三分割法"
+                },
+                {
+                    "en": "leading lines",
+                    "ja": "導線"
+                }
+            ]
+        },
+        {
+            "id": "time",
+            "name": "時間",
+            "parent_id": null,
+            "tags": [
+                {
+                    "en": "night",
+                    "ja": "夜"
+                },
+                {
+                    "en": "morning",
+                    "ja": "朝"
+                },
+                {
+                    "en": "noon",
+                    "ja": "正午"
+                },
+                {
+                    "en": "evening",
+                    "ja": "夕方"
+                },
+                {
+                    "en": "spring",
+                    "ja": "春"
+                },
+                {
+                    "en": "summer",
+                    "ja": "夏"
+                },
+                {
+                    "en": "autumn",
+                    "ja": "秋"
+                },
+                {
+                    "en": "winter",
+                    "ja": "冬"
+                }
+            ]
+        },
+        {
+            "id": "cat_16_髪形",
+            "name": "髪形",
+            "parent_id": "hair",
+            "tags": [
+                {
+                    "en": "ponytail",
+                    "ja": "ポニーテール"
+                },
+                {
+                    "en": "short hair",
+                    "ja": "ショートヘア"
+                },
+                {
+                    "en": "long hair",
+                    "ja": "長い髪"
+                },
+                {
+                    "en": "twintails",
+                    "ja": "ツインテール"
+                },
+                {
+                    "en": "braids",
+                    "ja": "三つ編み"
+                },
+                {
+                    "en": "bun",
+                    "ja": "パン"
+                }
+            ]
+        },
+        {
+            "id": "cat_18_女性",
+            "name": "女性",
+            "parent_id": "clothes",
+            "tags": [
+                {
+                    "en": "activewear",
+                    "ja": "アクティブウェア"
+                },
+                {
+                    "en": "beachwear",
+                    "ja": "ビーチ"
+                },
+                {
+                    "en": "beaded",
+                    "ja": "ビーズ"
+                },
+                {
+                    "en": "business attire",
+                    "ja": "ビジネススーツ"
+                },
+                {
+                    "en": "cashmere",
+                    "ja": "カシミヤ"
+                },
+                {
+                    "en": "casual wear",
+                    "ja": "カジュアル"
+                },
+                {
+                    "en": "cocktail dress",
+                    "ja": "ドレス"
+                },
+                {
+                    "en": "couture",
+                    "ja": "クチュール"
+                },
+                {
+                    "en": "custom-made",
+                    "ja": "カスタムメイド"
+                },
+                {
+                    "en": "designer wear",
+                    "ja": "デザイナーウェア"
+                },
+                {
+                    "en": "embroidered",
+                    "ja": "刺繍"
+                },
+                {
+                    "en": "evening gown",
+                    "ja": "夕方"
+                },
+                {
+                    "en": "formal wear",
+                    "ja": "フォーマル"
+                },
+                {
+                    "en": "haute couture",
+                    "ja": "オートクチュール"
+                },
+                {
+                    "en": "haute couture garments",
+                    "ja": "オートクチュールの衣服"
+                },
+                {
+                    "en": "intimates",
+                    "ja": "親密な"
+                },
+                {
+                    "en": "jumpsuit",
+                    "ja": "スーツ"
+                },
+                {
+                    "en": "leggings",
+                    "ja": "レギンス"
+                },
+                {
+                    "en": "loungewear",
+                    "ja": "ラウンジウェア"
+                },
+                {
+                    "en": "luxury clothing",
+                    "ja": "高級衣料品"
+                },
+                {
+                    "en": "luxury fabrics",
+                    "ja": "高級生地"
+                },
+                {
+                    "en": "luxury fashion",
+                    "ja": "高級ファッション"
+                },
+                {
+                    "en": "maternity wear",
+                    "ja": "マタニティウェア"
+                },
+                {
+                    "en": "maxi dress",
+                    "ja": "ドレス"
+                },
+                {
+                    "en": "mini dress",
+                    "ja": "ドレス"
+                },
+                {
+                    "en": "nightwear",
+                    "ja": "夜"
+                },
+                {
+                    "en": "organza",
+                    "ja": "オーガンザ"
+                },
+                {
+                    "en": "outerwear",
+                    "ja": "アウターウェア"
+                },
+                {
+                    "en": "overalls",
+                    "ja": "オーバーオール"
+                },
+                {
+                    "en": "pajamas",
+                    "ja": "パジャマ"
+                },
+                {
+                    "en": "prom dress",
+                    "ja": "ドレス"
+                },
+                {
+                    "en": "romper",
+                    "ja": "ロンパース"
+                },
+                {
+                    "en": "runway fashion",
+                    "ja": "ランウェイファッション"
+                },
+                {
+                    "en": "satin",
+                    "ja": "サテン"
+                },
+                {
+                    "en": "sequined",
+                    "ja": "スパンコール"
+                },
+                {
+                    "en": "silk",
+                    "ja": "シルク"
+                },
+                {
+                    "en": "sleepwear",
+                    "ja": "寝間着"
+                },
+                {
+                    "en": "sweatshirt",
+                    "ja": "シャツ"
+                },
+                {
+                    "en": "swimwear",
+                    "ja": "水着"
+                },
+                {
+                    "en": "tailored",
+                    "ja": "テーラード"
+                },
+                {
+                    "en": "top",
+                    "ja": "トップダウン ボトムアップ"
+                },
+                {
+                    "en": "tracksuit",
+                    "ja": "スーツ"
+                },
+                {
+                    "en": "trousers",
+                    "ja": "ズボン"
+                },
+                {
+                    "en": "tulle",
+                    "ja": "チュール"
+                },
+                {
+                    "en": "velvet",
+                    "ja": "ベルベット"
+                },
+                {
+                    "en": "workwear",
+                    "ja": "作業服"
+                }
+            ]
+        }
+    ]
+}

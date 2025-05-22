@@ -1,0 +1,53 @@
+{
+    "categories": [
+        {
+            "id": "vaginal_acts",
+            "name": "膣関連行為",
+            "parent_id": "sexual_acts",
+            "tags": []
+        },
+        {
+            "id": "vaginal_intercourse",
+            "name": "膣性交",
+            "parent_id": "vaginal_acts",
+            "tags": [
+                {"en": "vaginal sex", "ja": "膣性交"},
+                {"en": "deep vaginal penetration", "ja": "深い膣挿入"},
+                {"en": "shallow vaginal penetration", "ja": "浅い膣挿入"},
+                {"en": "rough vaginal sex", "ja": "激しい膣性交"},
+                {"en": "gentle vaginal sex", "ja": "優しい膣性交"},
+                {"en": "multiple vaginal penetrations", "ja": "複数人による膣挿入"},
+                {"en": "double vaginal penetration", "ja": "ダブル膣挿入"},
+                {"en": "triple vaginal penetration", "ja": "トリプル膣挿入"},
+                {"en": "vaginal creampie", "ja": "膣内中出し"},
+                {"en": "vaginal cumshot", "ja": "膣内潮吹き"}
+            ]
+        },
+        {
+            "id": "vaginal_stimulation",
+            "name": "膣刺激",
+            "parent_id": "vaginal_acts",
+            "tags": [
+                {"en": "cunnilingus", "ja": "クンニリングス"},
+                {"en": "clitoral licking", "ja": "クリトリス舐め"},
+                {"en": "labia licking", "ja": "陰唇舐め"},
+                {"en": "vaginal licking", "ja": "膣舐め"},
+                {"en": "clitoral sucking", "ja": "クリトリス吸い"},
+                {"en": "labia sucking", "ja": "陰唇吸い"},
+                {"en": "vaginal sucking", "ja": "膣吸い"},
+                {"en": "fingering (vaginal)", "ja": "指挿入 (膣)"},
+                {"en": "g-spot stimulation", "ja": "Gスポット刺激"},
+                {"en": "vaginal fisting", "ja": "膣フィストファック"},
+                {"en": "vaginal dildo use", "ja": "膣ディルド使用"},
+                {"en": "vaginal vibrator use", "ja": "膣バイブレーター使用"},
+                {"en": "vaginal sex toy use", "ja": "膣セックス玩具使用"},
+                {"en": "vaginal inflation", "ja": "膣膨張"},
+                {"en": "vaginal stretching", "ja": "膣ストレッチ"},
+                {"en": "vaginal speculum", "ja": "膣鏡"},
+                {"en": "vaginal dilator", "ja": "膣拡張器"},
+                {"en": "vaginal syringe", "ja": "膣シリンジ"},
+                {"en": "vaginal douche", "ja": "膣洗浄器"}
+            ]
+        }
+    ]
+}

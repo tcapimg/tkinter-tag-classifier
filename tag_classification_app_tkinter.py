@@ -5,6 +5,7 @@ import pandas as pd
 import os
 import re
 import random
+import uuid # UUIDを生成するために追加
 
 # --- データの保存先ファイル名 ---
 DATA_FILE = 'tag_dictionary.json'
@@ -30,6 +31,11 @@ def load_dictionary():
         try:
             with open(DATA_FILE, 'r', encoding='utf-8') as f:
                 app_state['dictionary'] = json.load(f)
+            # 読み込み時に全てのタグの日本語説明をstripする
+            for category in app_state['dictionary'].get('categories', []):
+                for tag in category.get('tags', []):
+                    if 'ja' in tag and tag['ja'] is not None:
+                        tag['ja'] = tag['ja'].strip()
         except json.JSONDecodeError:
             messagebox.showerror("エラー", "辞書ファイルが破損しているようです。新しい辞書を作成します。")
             app_state['dictionary'] = {"categories": []}
@@ -48,8 +54,10 @@ def get_category_path(category_id):
     """カテゴリIDからカテゴリパス（例: 服装 / 女性 / トップス）を取得する関数"""
     path = []
     current_id = category_id
+    # カテゴリマップを一度構築して効率化
+    all_categories_map = {cat['id']: cat for cat in app_state['dictionary']['categories']}
     while current_id:
-        category = find_category_by_id(current_id)
+        category = all_categories_map.get(current_id)
         if category:
             path.insert(0, category['name'])
             current_id = category.get('parent_id')
@@ -91,11 +99,15 @@ def add_tag_to_dictionary(tag_en, tag_ja, category_id):
     """タグを辞書に追加する関数"""
     category = find_category_by_id(category_id)
     if category:
-        tag_exists = any(t['en'] == tag_en for cat in app_state['dictionary'].get('categories', []) for t in cat.get('tags', []))
-        if tag_exists:
-            return False, f"タグ '{tag_en}' は既に存在します。"
+        # 既存のタグをチェック (英語タグ名で大文字小文字を区別せずチェック)
+        existing_tag = next((t for t in category.setdefault('tags', []) if t['en'].lower() == tag_en.lower()), None)
+        if existing_tag:
+            # 既存のタグが見つかった場合、日本語説明を更新 (stripを適用)
+            existing_tag['ja'] = tag_ja.strip()
+            return True, f"タグ '{tag_en}' の日本語説明をカテゴリ '{category['name']}' で更新しました。"
         else:
-            category.setdefault('tags', []).append({"en": tag_en, "ja": tag_ja})
+            # 新規タグとして追加 (stripを適用)
+            category.setdefault('tags', []).append({"en": tag_en, "ja": tag_ja.strip()})
             return True, f"タグ '{tag_en}' をカテゴリ '{category['name']}' に追加しました。"
     else:
         return False, "指定されたカテゴリが見つかりません。"
@@ -507,7 +519,7 @@ def treeview_sort_column(tree_widget, col_name, col_index, reverse):
     arrow = ' \u25b2' if not reverse else ' \u25bc' # True (降順) なら下矢印、False (昇順) なら上矢印
     # ここで col_index をラムダ関数に渡すように修正
     tree_widget.heading(col_name, text=clean_heading_text + arrow, 
-                        command=lambda _col_name=col_name, _col_idx=col_index: treeview_sort_column(tree_widget, _col_name, _col_idx, sort_reverse_flags.get((tree_widget_name, _col_name), False)))
+                        command=lambda _col_name=col_name, _col_idx=i: treeview_sort_column(tree_widget, _col_name, _col_idx, sort_reverse_flags.get((tree_widget_name, _col_name), False)))
 
 
 # --- カテゴリ追加機能 ---
@@ -528,7 +540,8 @@ def add_new_category(name_entry, parent_combobox, target_notebook_tab_index=None
             return
 
     # Generate a simple unique ID
-    new_id = f"cat_{len(app_state['dictionary']['categories']) + 1}_{new_name.replace(' ', '_').lower()}"
+    # UUIDの使用を推奨
+    new_id = str(uuid.uuid4()) # ユニークなIDを生成
     
     app_state['dictionary']['categories'].append({
         "id": new_id,
@@ -552,7 +565,7 @@ def add_new_category(name_entry, parent_combobox, target_notebook_tab_index=None
 # --- タグ直接追加機能 ---
 def add_direct_tag(english_entry, japanese_entry, category_combobox):
     tag_en = english_entry.get().strip()
-    tag_ja = japanese_entry.get().strip()
+    tag_ja = japanese_entry.get().strip() # stripを適用
     category_path = category_combobox.get()
 
     if not tag_en:
@@ -876,7 +889,7 @@ def create_manage_dictionary_tab(notebook_frame):
             editor = ttk.Entry(dict_tree)
             editor.insert(0, current_value)
             def on_entry_return(event):
-                new_value = editor.get()
+                new_value = editor.get().strip() # stripを適用
                 app_state['edited_dict_df'].loc[row_index, columns[column_index]] = new_value
                 dict_tree.item(item_id, values=list(app_state['edited_dict_df'].loc[row_index][["英語タグ名", "日本語説明", "カテゴリ"]]))
                 editor.destroy()
@@ -1076,7 +1089,7 @@ def save_dict_changes():
         for tag in category.get('tags', []):
             all_tags_flat[tag['en'].lower()] = {
                 'en': tag['en'],
-                'ja': tag.get('ja', ''),
+                'ja': tag.get('ja', ''), # ここは読み込んだまま
                 'category_id': category['id']
             }
 
@@ -1087,7 +1100,7 @@ def save_dict_changes():
     # edited_dict_df にあるタグは、元の辞書から更新されたもの、または新規追加されたもの
     for index, row in app_state['edited_dict_df'].iterrows():
         tag_en = row["英語タグ名"]
-        tag_ja = row["日本語説明"]
+        tag_ja = row["日本語説明"].strip() # stripを適用
         category_path = row["カテゴリ"]
         category_id = get_category_id_from_path(category_path)
 
@@ -1098,10 +1111,9 @@ def save_dict_changes():
         if tag_en.lower() in all_tags_flat:
             # 既存のタグを更新
             existing_tag_info = all_tags_flat[tag_en.lower()]
-            # 変更があった場合のみ更新カウント
-            if existing_tag_info['ja'] != tag_ja or existing_tag_info['category_id'] != category_id:
+            # 変更があった場合のみ更新カウント (比較時もstripを適用)
+            if existing_tag_info['ja'].strip() != tag_ja: # 比較時もstripを適用
                 existing_tag_info['ja'] = tag_ja
-                existing_tag_info['category_id'] = category_id
                 updated_count += 1
         else:
             # 新規タグを追加
@@ -1151,6 +1163,11 @@ def upload_dictionary_file():
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
                 app_state['dictionary'] = json.load(f)
+            # 読み込み時に全てのタグの日本語説明をstripする
+            for category in app_state['dictionary'].get('categories', []):
+                for tag in category.get('tags', []):
+                    if 'ja' in tag and tag['ja'] is not None:
+                        tag['ja'] = tag['ja'].strip()
             save_dictionary()
             messagebox.showinfo("情報", "辞書ファイルを読み込みました。")
             populate_dict_treeview()
@@ -1209,7 +1226,7 @@ def export_tags_without_ja():
 def import_translated_tags():
     """
     翻訳済みタグをインポートする関数。
-    辞書内の日本語説明が空または「説明なし」の場合にのみ更新を適用します。
+    CSVファイルから読み込んだ日本語説明で、辞書内の既存の日本語説明を上書きします。
     """
     filepath = filedialog.askopenfilename(title="翻訳済みタグリストCSVファイルを選択", filetypes=[("CSVファイル", "*.csv")])
     if not filepath:
@@ -1223,26 +1240,23 @@ def import_translated_tags():
         
         update_count = 0
         not_found_count = 0
-        skipped_existing_ja_count = 0 # 新しいカウンター
 
-        all_tags_flat_dict = {}
+        # 現在の辞書のタグを効率的にルックアップできるように、英語タグ名をキーとする辞書を作成
+        current_tags_map = {}
         for category in app_state['dictionary'].get('categories', []):
             for tag in category.get('tags', []):
-                all_tags_flat_dict[tag['en']] = tag # 英語タグ名をキーとしてタグオブジェクトを保存
+                current_tags_map[tag['en'].lower()] = tag # 小文字化した英語タグ名をキーに
 
         for index, row in translated_df.iterrows():
             english_tag = str(row['English Tag']).strip()
-            japanese_description = str(row['日本語説明']).strip()
+            japanese_description = str(row['日本語説明']).strip() # stripを適用
 
-            if english_tag in all_tags_flat_dict:
-                current_ja = all_tags_flat_dict[english_tag].get('ja', '')
-                # 日本語説明が空、または「説明なし」の場合にのみ更新
-                if not current_ja or current_ja == '説明なし':
-                    all_tags_flat_dict[english_tag]['ja'] = japanese_description
+            if english_tag.lower() in current_tags_map:
+                # 既存のタグが見つかった場合、日本語説明を上書き (stripを適用)
+                existing_tag_obj = current_tags_map[english_tag.lower()]
+                if existing_tag_obj['ja'].strip() != japanese_description: # 比較時もstripを適用
+                    existing_tag_obj['ja'] = japanese_description
                     update_count += 1
-                else:
-                    skipped_existing_ja_count += 1
-                    print(f"タグ '{english_tag}' には既に日本語説明があるためスキップしました。")
             else:
                 not_found_count += 1
                 print(f"辞書にタグ '{english_tag}' が見つかりませんでした。このタグの日本語説明は更新されません。")
@@ -1251,8 +1265,7 @@ def import_translated_tags():
         messagebox.showinfo("情報", 
                             f"翻訳済みタグのインポートが完了しました。\n"
                             f"更新: {update_count}件\n"
-                            f"辞書に見つからなかったタグ: {not_found_count}件\n"
-                            f"既に日本語説明があったためスキップされたタグ: {skipped_existing_ja_count}件")
+                            f"辞書に見つからなかったタグ: {not_found_count}件")
         populate_dict_treeview(dict_search_entry.get(), dict_filter_var.get()) # フィルタを維持して更新
         update_category_dropdowns()
         update_available_tags_treeview() # タグセット生成タブも更新
@@ -1278,95 +1291,157 @@ def import_additional_dictionary_json():
 
         added_categories_count = 0
         added_tags_count = 0
-        skipped_tags_count = 0
+        updated_tags_count = 0
 
-        # 現在の辞書の状態を効率的にルックアップできるように準備
-        current_category_paths = {} # {path_string: category_id}
-        current_tags_en_lower = set() # {tag_en.lower()}
+        # --- 現在の辞書の状態を効率的にルックアップできるように準備 ---
+        # (カテゴリ名.lower(), parent_id) -> カテゴリオブジェクト のマップ
+        current_category_name_parent_map = {} 
+        # 英語タグ名(小文字) -> タグオブジェクト のマップ
+        current_tag_en_lower_to_obj = {} 
 
-        # まず現在の辞書から全てのカテゴリパスとタグを収集
-        def collect_current_data(categories_list_to_process, parent_path=""):
-            for cat in categories_list_to_process:
-                full_path = f"{parent_path} / {cat['name']}" if parent_path else cat['name']
-                current_category_paths[full_path] = cat['id']
-                for tag in cat.get('tags', []):
-                    current_tags_en_lower.add(tag['en'].lower())
-                # Recursively collect children
-                children = [c for c in app_state['dictionary']['categories'] if c.get('parent_id') == cat['id']]
-                collect_current_data(children, full_path)
+        # Populate current maps
+        for cat in app_state['dictionary']['categories']:
+            parent_id = cat.get('parent_id')
+            current_category_name_parent_map[(cat['name'].lower(), parent_id)] = cat
+            for tag in cat.get('tags', []):
+                current_tag_en_lower_to_obj[tag['en'].lower()] = tag
 
-        top_level_current_categories = [c for c in app_state['dictionary']['categories'] if c.get('parent_id') is None]
-        collect_current_data(top_level_current_categories)
+        # --- インポートされる辞書内のカテゴリIDを、マージ後の辞書のIDにマッピングするための準備 ---
+        # imported_cat_id -> current_cat_id (または新しく生成されたID)
+        imported_id_to_final_id = {} 
+        # imported_cat_id -> imported_cat_object
+        imported_categories_by_id = {c['id']: c for c in imported_data['categories']}
+        
+        # 処理済みのインポートカテゴリIDを追跡
+        processed_imported_category_ids = set()
+        # 未処理のインポートカテゴリリストを初期化
+        unprocessed_imported_categories = list(imported_data['categories'])
 
-        # インポートされる辞書内のカテゴリパスを生成するためのヘルパー関数
-        def get_category_path_from_imported(category_info, imported_categories_list):
-            path = []
-            current_id = category_info['id']
-            # imported_categories_list 内で親カテゴリを検索するためのマップ
-            temp_map = {c['id']: c for c in imported_categories_list}
-            
-            while current_id:
-                cat = temp_map.get(current_id)
-                if cat:
-                    path.insert(0, cat['name'])
-                    current_id = cat.get('parent_id')
+        # --- カテゴリのマージ (親カテゴリが先に処理されるように反復処理) ---
+        # 最大ループ回数を設定し、無限ループを防ぐ
+        max_iterations = len(imported_data['categories']) * 2 # Safety break
+        iteration_count = 0
+
+        while len(processed_imported_category_ids) < len(imported_data['categories']) and iteration_count < max_iterations:
+            iteration_count += 1
+            categories_processed_in_this_iteration = []
+
+            # 未処理のカテゴリリストのコピーをイテレート
+            for imported_cat in list(unprocessed_imported_categories):
+                if imported_cat['id'] in processed_imported_category_ids:
+                    continue # 既に処理済み
+
+                imported_parent_id = imported_cat.get('parent_id')
+                imported_cat_name = imported_cat['name']
+
+                resolved_parent_id_in_main_dict = None
+                can_process_category = False
+
+                if imported_parent_id is None: # Top-level category in imported file
+                    can_process_category = True
+                    resolved_parent_id_in_main_dict = None
+                elif imported_parent_id == "general": # Special "general" parent
+                    # Try to find "general" category in current dictionary
+                    general_cat_obj = current_category_name_parent_map.get(("general", None))
+                    if general_cat_obj:
+                        resolved_parent_id_in_main_dict = general_cat_obj['id']
+                        can_process_category = True
+                    else:
+                        # If "general" doesn't exist, treat this imported category as a new top-level
+                        resolved_parent_id_in_main_dict = None
+                        can_process_category = True
+                elif imported_parent_id in imported_id_to_final_id: # Parent was processed in this import session
+                    resolved_parent_id_in_main_dict = imported_id_to_final_id[imported_parent_id]
+                    can_process_category = True
                 else:
+                    # Check if parent exists in the main dictionary already
+                    existing_parent_in_main_dict = find_category_by_id(imported_parent_id, app_state['dictionary']['categories'])
+                    if existing_parent_in_main_dict:
+                        resolved_parent_id_in_main_dict = existing_parent_in_main_dict['id']
+                        can_process_category = True
+                    else:
+                        # Parent not found in main dictionary or in current import session.
+                        # Treat this imported category as a new top-level category and issue a warning.
+                        messagebox.showwarning("警告", f"インポートされたカテゴリ '{imported_cat_name}' の親カテゴリID '{imported_parent_id}' が見つかりませんでした。このカテゴリはトップレベルカテゴリとして追加されます。")
+                        resolved_parent_id_in_main_dict = None
+                        can_process_category = True # Can process now, as it's top-level
+
+                if can_process_category:
+                    # Check if this category (by name and resolved parent) already exists in the main dictionary
+                    existing_cat_obj = current_category_name_parent_map.get((imported_cat_name.lower(), resolved_parent_id_in_main_dict))
+
+                    if existing_cat_obj:
+                        # Category already exists, reuse it
+                        final_cat_id = existing_cat_obj['id']
+                        imported_id_to_final_id[imported_cat['id']] = final_cat_id
+                    else:
+                        # New category, add it
+                        final_cat_id = str(uuid.uuid4())
+                        new_category_obj = {
+                            "id": final_cat_id,
+                            "name": imported_cat_name,
+                            "parent_id": resolved_parent_id_in_main_dict,
+                            "tags": [] # Tags will be added later
+                        }
+                        app_state['dictionary']['categories'].append(new_category_obj)
+                        current_category_name_parent_map[(imported_cat_name.lower(), resolved_parent_id_in_main_dict)] = new_category_obj
+                        imported_id_to_final_id[imported_cat['id']] = final_cat_id
+                        added_categories_count += 1
+                    
+                    categories_processed_in_this_iteration.append(imported_cat)
+                    processed_imported_category_ids.add(imported_cat['id']) # ここで処理済みとしてマーク
+
+            # このイテレーションで処理されたカテゴリを未処理リストから削除
+            unprocessed_imported_categories = [cat for cat in unprocessed_imported_categories if cat['id'] not in processed_imported_category_ids]
+
+            if not categories_processed_in_this_iteration and unprocessed_imported_categories:
+                # このイテレーションで何も処理されなかったが、まだ未処理のカテゴリが残っている場合
+                # これは解決できない依存関係（例：循環参照）を示唆している可能性が高い
+                messagebox.showwarning("警告", "インポートするカテゴリ階層に解決できない依存関係があるか、親カテゴリが見つかりません。一部のカテゴリがインポートされない可能性があります。")
+                break # 無限ループを防ぐためにループを抜ける
+
+        # --- タグのマージ (全てのカテゴリがマッピングされた後) ---
+        for imported_cat in imported_data['categories']:
+            # Get the corresponding category object in the main dictionary
+            target_current_cat_id = imported_id_to_final_id.get(imported_cat['id'])
+            if not target_current_cat_id:
+                # This imported category was not successfully processed, skip its tags
+                continue 
+            
+            target_category_obj = None
+            # Find the actual category object in the main dictionary using its final ID
+            for cat in app_state['dictionary']['categories']:
+                if cat['id'] == target_current_cat_id:
+                    target_category_obj = cat
                     break
-            return " / ".join(path) if path else ""
-
-        # インポートするカテゴリとタグをマージする再帰関数
-        def _merge_imported_category(imported_cat, parent_id_in_current_dict=None):
-            nonlocal added_categories_count, added_tags_count, skipped_tags_count
-
-            imported_cat_path = get_category_path_from_imported(imported_cat, imported_data['categories'])
             
-            target_category_id_in_current_dict = None
-            if imported_cat_path in current_category_paths:
-                # 既存のカテゴリパスに一致する場合
-                target_category_id_in_current_dict = current_category_paths[imported_cat_path]
-            else:
-                # 新しいカテゴリの場合
-                # ユニークなIDを生成 (既存のIDと重複しないように乱数も追加)
-                new_cat_id = f"cat_{len(app_state['dictionary']['categories']) + 1}_{imported_cat['name'].replace(' ', '_').lower()}_{random.randint(1000, 9999)}"
-                new_category_obj = {
-                    "id": new_cat_id,
-                    "name": imported_cat['name'],
-                    "parent_id": parent_id_in_current_dict,
-                    "tags": []
-                }
-                app_state['dictionary']['categories'].append(new_category_obj)
-                current_category_paths[imported_cat_path] = new_cat_id # 新しいカテゴリパスを追加
-                added_categories_count += 1
-                target_category_id_in_current_dict = new_cat_id
-            
-            # ターゲットカテゴリオブジェクトを取得
-            target_category_obj = find_category_by_id(target_category_id_in_current_dict)
+            if not target_category_obj:
+                # Should not happen if target_current_cat_id exists in map
+                continue
 
-            # タグのマージ
             for imported_tag in imported_cat.get('tags', []):
-                if imported_tag['en'].lower() not in current_tags_en_lower:
-                    target_category_obj['tags'].append({"en": imported_tag['en'], "ja": imported_tag.get('ja', '')})
-                    current_tags_en_lower.add(imported_tag['en'].lower())
-                    added_tags_count += 1
-                else:
-                    skipped_tags_count += 1
-            
-            # 子カテゴリの処理
-            imported_children = [c for c in imported_data['categories'] if c.get('parent_id') == imported_cat['id']]
-            for child_imported_cat in imported_children:
-                _merge_imported_category(child_imported_cat, target_category_id_in_current_dict)
+                imported_tag_en_lower = imported_tag['en'].lower()
+                imported_tag_ja = imported_tag.get('ja', '').strip() # stripを適用
 
-        # インポートする辞書のトップレベルカテゴリからマージを開始
-        imported_top_level_categories = [c for c in imported_data['categories'] if c.get('parent_id') is None]
-        for imported_cat in imported_top_level_categories:
-            _merge_imported_category(imported_cat)
+                if imported_tag_en_lower in current_tag_en_lower_to_obj:
+                    # 既存のタグが見つかった場合、日本語説明を更新 (比較時もstripを適用)
+                    existing_tag_obj = current_tag_en_lower_to_obj[imported_tag_en_lower]
+                    if existing_tag_obj['ja'].strip() != imported_tag_ja: # 比較時もstripを適用
+                        existing_tag_obj['ja'] = imported_tag_ja
+                        updated_tags_count += 1
+                else:
+                    # 新規タグとして追加 (stripを適用)
+                    new_tag = {"en": imported_tag['en'], "ja": imported_tag_ja}
+                    target_category_obj.setdefault('tags', []).append(new_tag)
+                    current_tag_en_lower_to_obj[imported_tag_en_lower] = new_tag # Add to map for future checks
+                    added_tags_count += 1
 
         save_dictionary()
         messagebox.showinfo("インポート完了", 
                             f"追加辞書JSONのインポートが完了しました。\n"
                             f"追加されたカテゴリ: {added_categories_count}件\n"
                             f"追加されたタグ: {added_tags_count}件\n"
-                            f"スキップされた重複タグ: {skipped_tags_count}件")
+                            f"更新されたタグ: {updated_tags_count}件")
         
         # UIを更新
         update_category_dropdowns()
@@ -1499,7 +1574,7 @@ def create_classify_tags_tab(notebook_frame):
             editor = ttk.Entry(unclassified_tree)
             editor.insert(0, current_value)
             def on_entry_return(event):
-                new_value = editor.get()
+                new_value = editor.get().strip() # stripを適用
                 app_state['unclassified_df'].loc[row_index, columns[column_index]] = new_value
                 update_treeview(unclassified_tree, app_state['unclassified_df']) # DataFrame全体を更新してTreeviewを再描画
                 editor.destroy()
@@ -1534,10 +1609,14 @@ def create_classify_tags_tab(notebook_frame):
 def process_unclassified_tags(tags_list_cleaned):
     """未分類タグリストを処理し、DataFrameを更新する共通関数"""
     newly_unclassified = []
-    all_dict_tags_en = {t['en'].lower() for cat in app_state['dictionary'].get('categories', []) for t in cat.get('tags', [])}
+    # 辞書内のすべてのタグを効率的にルックアップできるように、英語タグ名をキーとする辞書を作成
+    all_dict_tags_en_map = {t['en'].lower(): t for cat in app_state['dictionary'].get('categories', []) for t in cat.get('tags', [])}
 
     for tag in tags_list_cleaned:
-        if tag.lower() in all_dict_tags_en:
+        if tag.lower() in all_dict_tags_en_map:
+            # 既存のタグが見つかった場合、日本語説明を更新
+            existing_tag_obj = all_dict_tags_en_map[tag.lower()]
+            # ここでは既存のタグの日本語説明を更新するロジックは含めない（分類タブの役割ではないため）
             print(f"タグ '{tag}' は既に辞書に存在します。スキップします。")
         else:
             newly_unclassified.append(tag)
@@ -1550,7 +1629,8 @@ def process_unclassified_tags(tags_list_cleaned):
 
         if hints:
             top_hint = hints[0]
-            suggested_ja = top_hint.get('tag_ja', '') if top_hint.get('tag_ja') != '説明なし' else ''
+            # stripを適用
+            suggested_ja = (top_hint.get('tag_ja', '') if top_hint.get('tag_ja') != '説明なし' else '').strip()
             suggested_cat_path = top_hint.get('category_path', '')
 
         unclassified_tags_data.append({
@@ -1636,42 +1716,60 @@ def apply_selected_category_unclassified_tab():
 def add_classified_tags_to_dictionary_unclassified_tab():
     """未分類タグタブで分類したタグを辞書に追加する"""
     added_count = 0
+    updated_count = 0 # 更新されたタグのカウントを追加
     unclassified_after_add = []
-    all_dict_tags_en = {t['en'].lower() for cat in app_state['dictionary'].get('categories', []) for t in cat.get('tags', [])}
+    
+    # 辞書内のすべてのタグを効率的にルックアップできるように、英語タグ名をキーとする辞書を作成
+    all_dict_tags_en_map = {}
+    for category in app_state['dictionary'].get('categories', []):
+        for tag in category.get('tags', []):
+            all_dict_tags_en_map[tag['en'].lower()] = tag
 
     for index, row in app_state['unclassified_df'].iterrows():
         tag_en = row["英語タグ名"]
-        tag_ja = row["日本語説明"]
+        tag_ja = row["日本語説明"].strip() # stripを適用
         category_path = row["カテゴリ"]
 
         if category_path and category_path != "--カテゴリを選択--":
             category_id = get_category_id_from_path(category_path)
             if category_id is not None:
-                if tag_en.lower() not in all_dict_tags_en:
+                if tag_en.lower() in all_dict_tags_en_map:
+                    # 既存のタグが見つかった場合、日本語説明を更新
+                    existing_tag_obj = all_dict_tags_en_map[tag_en.lower()]
+                    # カテゴリも更新できるように修正 (ただし、カテゴリ移動は慎重に)
+                    # ここでは、同じ英語タグ名であれば日本語説明を更新するのみとする
+                    if existing_tag_obj['ja'].strip() != tag_ja: # 比較時もstripを適用
+                        existing_tag_obj['ja'] = tag_ja
+                        updated_count += 1
+                else:
+                    # 新規タグとして追加
                     success, message = add_tag_to_dictionary(tag_en, tag_ja, category_id)
                     if success:
                         added_count += 1
-                        all_dict_tags_en.add(tag_en.lower())
+                        # 新しく追加されたタグもマップに反映
+                        target_category = find_category_by_id(category_id)
+                        if target_category:
+                            new_tag_obj = next((t for t in target_category['tags'] if t['en'].lower() == tag_en.lower()), None)
+                            if new_tag_obj:
+                                all_dict_tags_en_map[tag_en.lower()] = new_tag_obj
                     else:
                         messagebox.showwarning("警告", f"タグ '{tag_en}' の追加に失敗しました: {message}")
                         unclassified_after_add.append(tag_en)
-                else:
-                    print(f"タグ '{tag_en}' は既に辞書に存在するためスキップしました。")
             else:
                 messagebox.showwarning("警告", f"タグ '{tag_en}': 無効なカテゴリパス '{category_path}' です。スキップしました。")
                 unclassified_after_add.append(tag_en)
         else:
             unclassified_after_add.append(tag_en)
 
-    app_state['unclassified_df'] = pd.DataFrame(unclassified_after_add, columns=["英語タグ名"])
+    # 未分類のまま残ったタグを再処理
     unclassified_tags_data = []
-    for tag_en in app_state['unclassified_df']["英語タグ名"]:
+    for tag_en in unclassified_after_add:
         hints = get_classification_hint(tag_en)
         suggested_ja = ""
         suggested_cat_path = "--カテゴリを選択--"
         if hints:
             top_hint = hints[0]
-            suggested_ja = top_hint.get('tag_ja', '') if top_hint.get('tag_ja') != '説明なし' else ''
+            suggested_ja = (top_hint.get('tag_ja', '') if top_hint.get('tag_ja') != '説明なし' else '').strip() # stripを適用
             suggested_cat_path = top_hint.get('category_path', '')
         unclassified_tags_data.append({
             "英語タグ名": tag_en,
@@ -1688,7 +1786,8 @@ def add_classified_tags_to_dictionary_unclassified_tab():
     populate_category_hierarchy_treeview(category_hierarchy_tree_manage) # 辞書管理タブの階層Treeviewを更新
     populate_category_hierarchy_treeview(category_hierarchy_tree_classify) # 分類タブの階層Treeviewも更新
     unclassified_status_label.config(text=f"未分類タグ ({len(app_state['unclassified_df'])}件):")
-    messagebox.showinfo("情報", f"{added_count}件のタグを辞書に追加しました。辞書ファイルも更新されました。")
+    messagebox.showinfo("情報", f"{added_count}件のタグを辞書に追加し、{updated_count}件のタグを更新しました。辞書ファイルも更新されました。")
+
 
 def clear_unclassified_tags_classify_tab():
     """未分類タグリストをクリアする（分類タブ用）"""
@@ -1786,14 +1885,22 @@ def create_random_tag_gen_tab(notebook_frame):
     tab_frame = ttk.Frame(notebook_frame, padding="10")
 
     random_gen_frame = ttk.LabelFrame(tab_frame, text="ランダムタグセット生成", padding="10")
-    random_gen_frame.pack(fill=tk.BOTH, expand=True, pady=5) # expandをTrueに
+    random_gen_frame.pack(fill=tk.BOTH, expand=True, pady=5)
 
     ttk.Label(random_gen_frame, text="各最終カテゴリ（子カテゴリを持たないカテゴリ）からランダムに1つずつタグを選んでタグセットを生成します。").pack(pady=5)
     ttk.Button(random_gen_frame, text="ランダムタグセットを生成", command=generate_random_tag_set).pack(pady=5)
     
-    global random_generated_label
-    random_generated_label = ttk.Label(random_gen_frame, text="", wraplength=700) # wraplengthで折り返し
-    random_generated_label.pack(pady=5, fill=tk.BOTH, expand=True) # expandをTrueに
+    # 生成されたタグを表示するTextウィジェットとスクロールバー
+    text_area_frame = ttk.Frame(random_gen_frame)
+    text_area_frame.pack(fill=tk.BOTH, expand=True, pady=5)
+
+    global random_generated_label # LabelからTextに変更
+    random_generated_label = tk.Text(text_area_frame, height=10, wrap="word") # heightを設定
+    random_generated_label.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+    text_scrollbar = ttk.Scrollbar(text_area_frame, orient="vertical", command=random_generated_label.yview)
+    random_generated_label.config(yscrollcommand=text_scrollbar.set)
+    text_scrollbar.pack(side=tk.RIGHT, fill="y")
 
     ttk.Button(random_gen_frame, text="このランダムタグセットを選択済みに追加", command=add_random_tags_to_selected).pack(pady=5)
 
@@ -1801,18 +1908,16 @@ def create_random_tag_gen_tab(notebook_frame):
 
 def get_leaf_categories(categories_list):
     """子カテゴリを持たない最終カテゴリのリストを返す"""
-    all_parent_ids = {cat.get('parent_id') for cat in categories_list if cat.get('parent_id') is not None}
-    all_category_ids = {cat['id'] for cat in categories_list}
+    # カテゴリIDをキーとするマップを作成
+    category_id_map = {cat['id']: cat for cat in categories_list}
     
-    # 全てのカテゴリIDのうち、他のカテゴリのparent_idとして存在しないものがリーフカテゴリ
+    # 全てのカテゴリのparent_idをセットに収集
+    all_parent_ids = {cat.get('parent_id') for cat in categories_list if cat.get('parent_id') is not None}
+    
     leaf_categories = []
     for category in categories_list:
-        is_leaf = True
-        for other_cat in categories_list:
-            if other_cat.get('parent_id') == category['id']:
-                is_leaf = False
-                break
-        if is_leaf:
+        # 自身のIDが他のカテゴリのparent_idとして存在しない場合、それはリーフカテゴリ
+        if category['id'] not in all_parent_ids:
             leaf_categories.append(category)
     return leaf_categories
 
@@ -1968,7 +2073,8 @@ def generate_random_tag_set():
         messagebox.showwarning("警告", "ランダムタグセットを生成できませんでした。\n辞書にタグが登録されていないか、初期辞書が生成されていません。\n「カテゴリ・辞書管理」タブでデモ用初期辞書を生成するか、辞書をアップロードしてください。")
         # random_generated_labelがNoneでないことを確認
         if random_generated_label is not None:
-            random_generated_label.config(text="ランダムタグセットを生成できませんでした。辞書にタグがありません。")
+            random_generated_label.delete(1.0, tk.END) # Textウィジェットなのでdelete
+            random_generated_label.insert(tk.END, "ランダムタグセットを生成できませんでした。辞書にタグがありません。")
         return
 
     for category in leaf_categories_with_tags:
@@ -1987,7 +2093,8 @@ def generate_random_tag_set():
         display_text = "ランダムタグセットを生成できませんでした。辞書にタグがありません。"
     # random_generated_labelがNoneでないことを確認
     if random_generated_label is not None:
-        random_generated_label.config(text=display_text)
+        random_generated_label.delete(1.0, tk.END) # Textウィジェットなのでdelete
+        random_generated_label.insert(tk.END, display_text)
     messagebox.showinfo("情報", "ランダムタグセットを生成しました。")
 
 def add_random_tags_to_selected():
@@ -2003,7 +2110,7 @@ def add_random_tags_to_selected():
     app_state['random_generated_tags'] = []
     # random_generated_labelがNoneでないことを確認
     if random_generated_label is not None:
-        random_generated_label.config(text="")
+        random_generated_label.delete(1.0, tk.END) # Textウィジェットなのでdelete
     update_selected_generating_treeview()
     update_generated_text()
     messagebox.showinfo("情報", f"{added_count}件のランダムタグを選択済みタグに追加しました。")

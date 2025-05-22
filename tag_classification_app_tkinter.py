@@ -962,7 +962,7 @@ def delete_selected_tags():
 
     # 新しい辞書構造を構築し、削除対象のタグを含めない
     new_dictionary_structure = {"categories": []}
-    for category in app_state['dictionary']['categories']:
+    for category in app_state['dictionary'].get('categories', []):
         new_category = {
             "id": category['id'],
             "name": category['name'],
@@ -1796,6 +1796,18 @@ def clear_unclassified_tags_classify_tab():
     unclassified_status_label.config(text="未分類タグリストを読み込んでください。")
     messagebox.showinfo("情報", "未分類タグリストをクリアしました。")
 
+# 新しく追加する関数
+def copy_generated_text():
+    """生成されたタグテキストをクリップボードにコピーする関数"""
+    if generated_text_area is None: return
+    text_to_copy = generated_text_area.get(1.0, tk.END).strip()
+    if text_to_copy:
+        root.clipboard_clear()
+        root.clipboard_append(text_to_copy)
+        messagebox.showinfo("情報", "生成されたタグテキストをクリップボードにコピーしました！")
+    else:
+        messagebox.showwarning("警告", "コピーするテキストがありません。")
+
 
 def create_generate_tags_tab(notebook_frame):
     """タグセット生成タブのUIを構築する関数"""
@@ -1859,6 +1871,9 @@ def create_generate_tags_tab(notebook_frame):
     ttk.Button(selected_tags_buttons_frame, text="削除", command=remove_selected_generating_tag).pack(side="left", padx=5)
     ttk.Button(selected_tags_buttons_frame, text="上に移動", command=move_selected_generating_tag_up).pack(side="left", padx=5)
     ttk.Button(selected_tags_buttons_frame, text="下に移動", command=move_selected_generating_tag_down).pack(side="left", padx=5)
+    # 新しく追加するクリアボタン
+    ttk.Button(selected_tags_buttons_frame, text="選択済みタグをクリア", command=clear_selected_generating_tags).pack(side="right", padx=5)
+
 
     generated_text_frame = ttk.LabelFrame(tab_frame, text="生成されたタグテキスト", padding="10")
     generated_text_frame.pack(fill=tk.X, pady=5)
@@ -2051,13 +2066,18 @@ def update_generated_text():
     generated_text_area.delete(1.0, tk.END)
     generated_text_area.insert(tk.END, generated_text)
 
-def copy_generated_text():
-    """生成されたテキストをクリップボードにコピーする"""
-    # rootとgenerated_text_areaがNoneでないことを確認
-    if root is None or generated_text_area is None: return
-    root.clipboard_clear()
-    root.clipboard_append(generated_text_area.get(1.0, tk.END).strip())
-    messagebox.showinfo("情報", "テキストをクリップボードにコピーしました。")
+def clear_selected_generating_tags():
+    """選択済みタグリストをクリアする関数"""
+    if not app_state['selected_generating_tags']:
+        messagebox.showinfo("情報", "選択済みタグリストはすでに空です。")
+        return
+
+    if messagebox.askyesno("確認", "選択済みタグリストをすべてクリアしますか？"):
+        app_state['selected_generating_tags'] = []
+        update_selected_generating_treeview()
+        update_generated_text()
+        messagebox.showinfo("情報", "選択済みタグリストをクリアしました。")
+
 
 def generate_random_tag_set():
     """ランダムタグセットを生成する（最終カテゴリから1つずつ）"""
@@ -2098,13 +2118,15 @@ def generate_random_tag_set():
     messagebox.showinfo("情報", "ランダムタグセットを生成しました。")
 
 def add_random_tags_to_selected():
-    """ランダム生成されたタグを選択済みに追加する"""
-    current_selected_en = {t['en'] for t in app_state['selected_generating_tags']}
+    """ランダム生成されたタグを選択済みに追加する (既存の選択済みタグをクリアしてから追加)"""
+    # 既存の選択済みタグをクリア
+    app_state['selected_generating_tags'] = []
+    
     added_count = 0
     for tag_info in app_state['random_generated_tags']:
-        if tag_info['en'] not in current_selected_en:
+        # 重複チェックは不要になるが、念のため残す
+        if tag_info['en'] not in [t['en'] for t in app_state['selected_generating_tags']]:
             app_state['selected_generating_tags'].append(tag_info)
-            current_selected_en.add(tag_info['en'])
             added_count += 1
     
     app_state['random_generated_tags'] = []

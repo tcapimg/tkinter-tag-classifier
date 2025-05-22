@@ -33,12 +33,12 @@ git clone https://github.com/tcapimg/tkinter-tag-classifier.git
 
 ### **4\. 必要なライブラリのインストール**
 
-クローンしたリポジトリのディレクトリに移動し、必要なPythonライブラリをインストールします。
+クローンしたリポジリのディレクトリに移動し、必要なPythonライブラリをインストールします。
 
 cd tkinter-tag-classifier  
 pip install \-r requirements.txt
 
-requirements.txt **の内容:**
+**requirements.txt の内容:**
 
 pandas  
 openpyxl
@@ -49,7 +49,7 @@ pip install pandas openpyxl
 
 ### **5\. アプリケーションの実行**
 
-#### **方法1:** run\_app.bat **を使用する（Windows推奨）**
+#### **方法1: run\_app.bat を使用する（Windows推奨）**
 
 Windows環境では、リポジトリのルートディレクトリにある run\_app.bat をダブルクリックするだけでアプリケーションを起動できます。
 
@@ -64,6 +64,8 @@ python tag\_classification\_app\_tkinter.py
 アプリケーションは複数のタブで構成されており、それぞれ異なる機能を提供します。
 
 ### **📁 ファイル管理タブ**
+
+このアプリケーションの主要な辞書データは、ルートディレクトリに自動生成される tag\_dictionary.json ファイルに保存されます。**このリポジトリにすでに含まれている tag\_dictionary.json は、dictionary フォルダ内のJSONファイルをマージ済みのものですので、そのままお使いいただけます。** また、このファイルには、ユーザーが「追加辞書JSONをインポート (マージ)」機能などを使って手動でインポートしたカテゴリやタグ、および手動で追加・編集された全ての情報がマージされて格納されます。そのため、多くのタグやカテゴリが登録されると、ファイルサイズが大きくなることがあります。
 
 * **既存の辞書JSONをアップロード:** 外部のJSONファイルを辞書として読み込みます。  
 * **現在の辞書JSONをダウンロード:** 現在の辞書データをJSONファイルとして保存します。  

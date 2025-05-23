@@ -1312,7 +1312,7 @@ def import_additional_dictionary_json():
         current_tag_en_lower_to_obj = {} 
 
         # Populate current maps
-        for cat in app_state['dictionary']['categories']:
+        for cat in app_state['dictionary'].get('categories', []):
             parent_id = cat.get('parent_id')
             current_category_name_parent_map[(cat['name'].lower(), parent_id)] = cat
             for tag in cat.get('tags', []):
@@ -2135,7 +2135,7 @@ def add_selected_tag_to_generating_list():
         app_state['selected_generating_tags'].append({'en': tag_en, 'ja': tag_ja, 'category_path': category_path})
         update_selected_generating_treeview()
         update_generated_text()
-        messagebox.showinfo("情報", f"タグ '{tag_en}' を追加しました。")
+        # messagebox.showinfo("情報", f"タグ '{tag_en}' を追加しました。") # この行を削除
     else:
         messagebox.showwarning("警告", "そのタグは既に追加されています。")
 

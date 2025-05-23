@@ -357,7 +357,6 @@ def generate_initial_dictionary():
     app_state['dictionary'] = initial_data
     save_dictionary()
     messagebox.showinfo("情報", "初期辞書を生成しました。")
-    update_category_dropdowns()
     populate_dict_treeview() # 辞書管理タブのTreeviewを更新
     update_available_tags_treeview() # タグセット生成タブも更新
     # populate_category_hierarchy_treeview(category_hierarchy_tree_manage) # 辞書管理タブの階層Treeviewを更新
@@ -495,9 +494,23 @@ def update_category_dropdowns():
         add_tag_category_combobox['values'] = all_category_options
 
 
-def treeview_sort_column(tree_widget, col_name, col_index, reverse):
+def treeview_sort_column(tree_widget, col_name, reverse):
     """Treeviewの指定された列でソートする関数"""
-    l = [(tree_widget.set(k, col_name), k) for k in tree_widget.get_children('')]
+    # ツリー表示の場合、#0列はソートしない
+    if tree_widget.cget("show") == "tree" and col_name == "#0":
+        return
+
+    # Treeviewが階層表示の場合、アイテムのテキスト（#0列）でソートするか、valuesでソートするかを区別
+    if tree_widget.cget("show") == "tree" or tree_widget.cget("show") == "tree headings":
+        # #0列のソート
+        if col_name == "#0":
+            l = [(tree_widget.item(k, 'text'), k) for k in tree_widget.get_children('')]
+        else:
+            # その他の列のソート
+            l = [(tree_widget.set(k, col_name), k) for k in tree_widget.get_children('')]
+    else:
+        # 通常のTreeview（headingsのみ）のソート
+        l = [(tree_widget.set(k, col_name), k) for k in tree_widget.get_children('')]
     
     # ソートキーの型を考慮したソート（ここでは文字列としてソート）
     l.sort(key=lambda t: t[0], reverse=reverse)
@@ -517,9 +530,8 @@ def treeview_sort_column(tree_widget, col_name, col_index, reverse):
     clean_heading_text = re.sub(r' \u25b2| \u25bc', '', current_heading_text)
     # 新しい矢印を追加
     arrow = ' \u25b2' if not reverse else ' \u25bc' # True (降順) なら下矢印、False (昇順) なら上矢印
-    # ここで col_index をラムダ関数に渡すように修正
     tree_widget.heading(col_name, text=clean_heading_text + arrow, 
-                        command=lambda _col_name=col_name, _col_idx=i: treeview_sort_column(tree_widget, _col_name, _col_idx, sort_reverse_flags.get((tree_widget_name, _col_name), False)))
+                        command=lambda _col_name=col_name: treeview_sort_column(tree_widget, _col_name, sort_reverse_flags.get((tree_widget_name, _col_name), False)))
 
 
 # --- カテゴリ追加機能 ---
@@ -557,6 +569,7 @@ def add_new_category(name_entry, parent_combobox, target_notebook_tab_index=None
     populate_dict_treeview() # Refresh dictionary treeview
     populate_category_hierarchy_treeview(category_hierarchy_tree_manage) # 辞書管理タブの階層Treeviewを更新
     populate_category_hierarchy_treeview(category_hierarchy_tree_classify) # 分類タブの階層Treeviewを更新
+    populate_available_categories_treeview() # タグセット生成タブのカテゴリツリーを更新
     
     # カテゴリ追加後、元のタブに戻る
     if target_notebook_tab_index is not None:
@@ -688,6 +701,7 @@ def delete_category(category_id, category_name):
         populate_dict_treeview(dict_search_entry.get(), dict_filter_var.get())
         populate_category_hierarchy_treeview(category_hierarchy_tree_manage)
         populate_category_hierarchy_treeview(category_hierarchy_tree_classify)
+        populate_available_categories_treeview() # タグセット生成タブのカテゴリツリーを更新
 
 
 def set_parent_category_and_switch_tab(category_id, name_entry_widget, parent_combobox_widget, notebook_widget, target_tab_frame):
@@ -751,13 +765,12 @@ def create_manage_dictionary_tab(notebook_frame):
     category_view_frame.pack(fill=tk.BOTH, expand=True)
 
     global category_hierarchy_tree_manage # 辞書管理タブ用のTreeview
-    category_hierarchy_tree_manage = ttk.Treeview(category_view_frame, show="tree", selectmode="browse")
-    category_hierarchy_tree_manage.pack(fill=tk.BOTH, expand=True)
-
-    hierarchy_scrollbar_manage = ttk.Scrollbar(category_view_frame, orient="vertical", command=category_hierarchy_tree_manage.yview)
-    category_hierarchy_tree_manage.configure(yscrollcommand=hierarchy_scrollbar_manage.set)
+    hierarchy_scrollbar_manage = ttk.Scrollbar(category_view_frame, orient="vertical")
     hierarchy_scrollbar_manage.pack(side="right", fill="y")
-    
+    category_hierarchy_tree_manage = ttk.Treeview(category_view_frame, show="tree", selectmode="browse", yscrollcommand=hierarchy_scrollbar_manage.set)
+    category_hierarchy_tree_manage.pack(side="left", fill=tk.BOTH, expand=True)
+    hierarchy_scrollbar_manage.config(command=category_hierarchy_tree_manage.yview)
+
     # 右クリックメニューのバインド
     # ここで tab_frame を明示的にキャプチャ
     category_hierarchy_tree_manage.bind("<Button-3>", 
@@ -850,9 +863,8 @@ def create_manage_dictionary_tab(notebook_frame):
     dict_tree = ttk.Treeview(edit_frame, columns=columns, show="headings", selectmode="extended")
 
     # ヘッディングとソート機能のバインド
-    for i, col_name in enumerate(columns):
-        # ここで _col_idx=i を _col_idx=i に修正 (既に修正済みだが念のため)
-        dict_tree.heading(col_name, text=col_name, command=lambda _col_name=col_name, _col_idx=i: treeview_sort_column(dict_tree, _col_name, _col_idx, sort_reverse_flags.get((str(dict_tree), _col_name), False)))
+    for col_name in columns:
+        dict_tree.heading(col_name, text=col_name, command=lambda _col_name=col_name: treeview_sort_column(dict_tree, _col_name, sort_reverse_flags.get((str(dict_tree), _col_name), False)))
         dict_tree.column(col_name, width=200, anchor="w")
 
     scrollbar = ttk.Scrollbar(edit_frame, orient="vertical", command=dict_tree.yview)
@@ -1472,12 +1484,11 @@ def create_classify_tags_tab(notebook_frame):
     category_view_frame.pack(fill=tk.BOTH, expand=True)
 
     global category_hierarchy_tree_classify # 分類タブ用のTreeview
-    category_hierarchy_tree_classify = ttk.Treeview(category_view_frame, show="tree", selectmode="browse")
-    category_hierarchy_tree_classify.pack(fill=tk.BOTH, expand=True)
-
-    hierarchy_scrollbar_classify = ttk.Scrollbar(category_view_frame, orient="vertical", command=category_hierarchy_tree_classify.yview)
-    category_hierarchy_tree_classify.configure(yscrollcommand=hierarchy_scrollbar_classify.set)
+    hierarchy_scrollbar_classify = ttk.Scrollbar(category_view_frame, orient="vertical")
     hierarchy_scrollbar_classify.pack(side="right", fill="y")
+    category_hierarchy_tree_classify = ttk.Treeview(category_view_frame, show="tree", selectmode="browse", yscrollcommand=hierarchy_scrollbar_classify.set)
+    category_hierarchy_tree_classify.pack(side="left", fill=tk.BOTH, expand=True)
+    hierarchy_scrollbar_classify.config(command=category_hierarchy_tree_classify.yview)
 
     # カテゴリ追加機能 (分類タブ内)
     add_category_frame_classify = ttk.LabelFrame(left_frame, text="新しいカテゴリの追加", padding="10")
@@ -1535,9 +1546,8 @@ def create_classify_tags_tab(notebook_frame):
     global unclassified_tree
     unclassified_tree = ttk.Treeview(classify_tags_frame, columns=columns, show="headings", selectmode="extended")
 
-    for i, col_name in enumerate(columns):
-        # ここで _col_idx=i に修正 (既に修正済みだが念のため)
-        unclassified_tree.heading(col_name, text=col_name, command=lambda _col_name=col_name, _col_idx=i: treeview_sort_column(unclassified_tree, _col_name, _col_idx, sort_reverse_flags.get((str(unclassified_tree), _col_name), False)))
+    for col_name in columns:
+        unclassified_tree.heading(col_name, text=col_name, command=lambda _col_name=col_name: treeview_sort_column(unclassified_tree, _col_name, sort_reverse_flags.get((str(unclassified_tree), _col_name), False)))
         unclassified_tree.column(col_name, width=200, anchor="w")
 
     scrollbar = ttk.Scrollbar(classify_tags_frame, orient="vertical", command=unclassified_tree.yview)
@@ -1813,39 +1823,76 @@ def create_generate_tags_tab(notebook_frame):
     """タグセット生成タブのUIを構築する関数"""
     tab_frame = ttk.Frame(notebook_frame, padding="10")
 
-    available_tags_frame = ttk.LabelFrame(tab_frame, text="利用可能タグ (辞書より)", padding="10")
-    available_tags_frame.pack(fill=tk.X, pady=5)
+    # PanedWindowで左右に分割
+    paned_window = ttk.PanedWindow(tab_frame, orient=tk.HORIZONTAL)
+    paned_window.pack(fill=tk.BOTH, expand=True)
+
+    # 左側のフレーム (カテゴリ階層の閲覧)
+    left_gen_frame = ttk.Frame(paned_window, padding="10")
+    paned_window.add(left_gen_frame, weight=1)
+
+    category_view_gen_frame = ttk.LabelFrame(left_gen_frame, text="カテゴリ選択", padding="10")
+    category_view_gen_frame.pack(fill=tk.BOTH, expand=True)
+
+    global available_categories_tree
+    gen_cat_scrollbar = ttk.Scrollbar(category_view_gen_frame, orient="vertical")
+    gen_cat_scrollbar.pack(side="right", fill="y")
+    available_categories_tree = ttk.Treeview(category_view_gen_frame, show="tree", selectmode="browse", yscrollcommand=gen_cat_scrollbar.set)
+    available_categories_tree.pack(side="left", fill=tk.BOTH, expand=True)
+    gen_cat_scrollbar.config(command=available_categories_tree.yview)
+
+    # Bind selection event
+    available_categories_tree.bind("<<TreeviewSelect>>", on_available_category_select)
+    # Search entry for category tree (optional, but consistent with other trees)
+    global tag_gen_search_entry # Re-use the existing global search entry
+    tag_gen_search_entry_label = ttk.Label(category_view_gen_frame, text="カテゴリ検索:")
+    tag_gen_search_entry_label.pack(pady=5)
+    tag_gen_search_entry = ttk.Entry(category_view_gen_frame)
+    tag_gen_search_entry.bind("<KeyRelease>", lambda e: populate_available_categories_treeview()) # Update category tree on search
+    tag_gen_search_entry.pack(fill=tk.X, padx=5, pady=5)
+
+
+    # 右側のフレーム (タグリストと検索/フィルタ)
+    right_gen_frame = ttk.Frame(paned_window, padding="10")
+    paned_window.add(right_gen_frame, weight=2)
+
+    available_tags_frame = ttk.LabelFrame(right_gen_frame, text="利用可能タグ (選択カテゴリ内)", padding="10")
+    available_tags_frame.pack(fill=tk.BOTH, expand=True, pady=5)
 
     filter_search_frame = ttk.Frame(available_tags_frame)
     filter_search_frame.pack(fill=tk.X, pady=5)
     
-    ttk.Label(filter_search_frame, text="カテゴリで絞り込み:").pack(side="left", padx=5)
-    global tag_gen_filter_var, tag_gen_filter_combobox
-    tag_gen_filter_var = tk.StringVar(root)
-    tag_gen_filter_combobox = ttk.Combobox(filter_search_frame, textvariable=tag_gen_filter_var, state="readonly", values=["--全てのカテゴリ--"] + all_category_options[1:])
-    tag_gen_filter_combobox.set("--全てのカテゴリ--")
-    tag_gen_filter_combobox.bind("<<ComboboxSelected>>", lambda e: update_available_tags_treeview())
-    tag_gen_filter_combobox.pack(side="left", padx=5, expand=True, fill=tk.X)
+    # カテゴリフィルタは左のツリーで代替されるため、ここでは削除または非表示にする
+    #ttk.Label(filter_search_frame, text="カテゴリで絞り込み:").pack(side="left", padx=5)
+    #global tag_gen_filter_var, tag_gen_filter_combobox
+    #tag_gen_filter_var = tk.StringVar(root)
+    #tag_gen_filter_combobox = ttk.Combobox(filter_search_frame, textvariable=tag_gen_filter_var, state="readonly", values=["--全てのカテゴリ--"] + all_category_options[1:])
+    #tag_gen_filter_combobox.set("--全てのカテゴリ--")
+    #tag_gen_filter_combobox.bind("<<ComboboxSelected>>", lambda e: update_available_tags_treeview())
+    #tag_gen_filter_combobox.pack(side="left", padx=5, expand=True, fill=tk.X)
 
     ttk.Label(filter_search_frame, text="タグ名または説明で検索:").pack(side="left", padx=5)
-    global tag_gen_search_entry
-    tag_gen_search_entry = ttk.Entry(filter_search_frame)
-    tag_gen_search_entry.bind("<KeyRelease>", lambda e: update_available_tags_treeview())
-    tag_gen_search_entry.pack(side="left", padx=5, expand=True, fill=tk.X)
+    # tag_gen_search_entry は左のカテゴリツリー検索に再利用されるため、ここでは別のEntryを使うか、タグリストの検索専用にする
+    # ここでは、タグリストの検索専用のEntryを新しく作成する
+    global tag_list_search_entry
+    tag_list_search_entry = ttk.Entry(filter_search_frame)
+    tag_list_search_entry.bind("<KeyRelease>", lambda e: on_available_category_select(None)) # Re-trigger update based on current selection
+    tag_list_search_entry.pack(side="left", padx=5, expand=True, fill=tk.X)
 
-    columns = ("英語タグ名", "日本語説明", "カテゴリ")
-    global available_tags_tree
-    # Treeviewの高さ固定
-    available_tags_tree = ttk.Treeview(available_tags_frame, columns=columns, show="headings", selectmode="browse", height=10)
 
-    for i, col_name in enumerate(columns):
-        available_tags_tree.heading(col_name, text=col_name, command=lambda _col_name=col_name, _col_idx=i: treeview_sort_column(available_tags_tree, _col_name, _col_idx, sort_reverse_flags.get((str(available_tags_tree), _col_name), False)))
+    columns = ("英語タグ名", "日本語説明", "カテゴリ") # タグの列
+    global available_tags_tree # このTreeviewは右側のタグリストになる
+    available_tags_tree = ttk.Treeview(available_tags_frame, columns=columns, show="headings", selectmode="browse")
+
+    # ヘッディングの設定 (英語タグ名、日本語説明、フルパスカテゴリ)
+    for col_name in columns:
+        available_tags_tree.heading(col_name, text=col_name, command=lambda _col_name=col_name: treeview_sort_column(available_tags_tree, _col_name, sort_reverse_flags.get((str(available_tags_tree), _col_name), False)))
         available_tags_tree.column(col_name, width=150, anchor="w")
 
     scrollbar = ttk.Scrollbar(available_tags_frame, orient="vertical", command=available_tags_tree.yview)
     available_tags_tree.configure(yscrollcommand=scrollbar.set)
     scrollbar.pack(side="right", fill="y")
-    available_tags_tree.pack(fill=tk.BOTH, expand=False) # expandをFalseに
+    available_tags_tree.pack(fill=tk.BOTH, expand=True) # expandをTrueに
 
     ttk.Button(available_tags_frame, text="選択したタグを追加", command=add_selected_tag_to_generating_list).pack(pady=5)
 
@@ -1857,8 +1904,8 @@ def create_generate_tags_tab(notebook_frame):
     # Treeviewの高さ固定
     selected_generating_tree = ttk.Treeview(selected_tags_frame, columns=columns, show="headings", selectmode="browse", height=8)
 
-    for i, col_name in enumerate(columns):
-        selected_generating_tree.heading(col_name, text=col_name, command=lambda _col_name=col_name, _col_idx=i: treeview_sort_column(selected_generating_tree, _col_name, _col_idx, sort_reverse_flags.get((str(selected_generating_tree), _col_name), False)))
+    for col_name in columns:
+        selected_generating_tree.heading(col_name, text=col_name, command=lambda _col_name=col_name: treeview_sort_column(selected_generating_tree, _col_name, sort_reverse_flags.get((str(selected_generating_tree), _col_name), False)))
         selected_generating_tree.column(col_name, width=150, anchor="w")
 
     scrollbar = ttk.Scrollbar(selected_tags_frame, orient="vertical", command=selected_generating_tree.yview)
@@ -1937,57 +1984,152 @@ def get_leaf_categories(categories_list):
     return leaf_categories
 
 
-def update_available_tags_treeview():
-    """利用可能タグTreeviewを更新する"""
-    # tag_gen_search_entryがNoneでないことを確認
-    search_query = tag_gen_search_entry.get().lower() if tag_gen_search_entry is not None else ""
-    selected_filter_category_path = tag_gen_filter_var.get() if tag_gen_filter_var is not None else "--全てのカテゴリ--"
-    selected_filter_category_id = all_category_path_to_id.get(selected_filter_category_path)
+def check_if_category_or_descendant_matches_search(category_info, search_query_lower, all_categories_map):
+    """カテゴリまたはその子孫が検索クエリに一致するか再帰的にチェックする"""
+    # 現在のカテゴリ名が検索クエリに一致するか
+    if search_query_lower in category_info['name'].lower():
+        return True
+    # 現在のカテゴリのタグが検索クエリに一致するか
+    for tag in category_info.get('tags', []):
+        if search_query_lower in tag.get('en', '').lower() or \
+           search_query_lower in tag.get('ja', '').lower():
+            return True
+    # 子カテゴリを再帰的にチェック
+    children_categories = [cat for cat in app_state['dictionary']['categories'] if cat.get('parent_id') == category_info['id']]
+    for child_cat in children_categories:
+        if check_if_category_or_descendant_matches_search(child_cat, search_query_lower, all_categories_map):
+            return True
+    return False
 
-    available_tags_list = []
-    for category in app_state['dictionary'].get('categories', []):
-        is_under_filter = False
-        if selected_filter_category_id is None or selected_filter_category_path == "--全てのカテゴリ--":
-            is_under_filter = True
-        else:
-            current_cat_id = category['id']
-            while current_cat_id:
-                if current_cat_id == selected_filter_category_id:
-                    is_under_filter = True
-                    break
-                parent_cat = find_category_by_id(current_cat_id)
-                current_cat_id = parent_cat.get('parent_id') if parent_cat else None
 
-        if is_under_filter:
-            for tag in category.get('tags', []):
-                tag_en = tag.get('en', '')
-                tag_ja = tag.get('ja', '')
-                cat_path = get_category_path(category['id'])
+def populate_available_categories_treeview():
+    """タグセット生成タブの左側カテゴリツリーにデータをロードする関数"""
+    if available_categories_tree is None: return
+    for item in available_categories_tree.get_children():
+        available_categories_tree.delete(item)
 
-                if search_query in tag_en.lower() or search_query in tag_ja.lower():
-                    available_tags_list.append({
-                        "英語タグ名": tag_en,
-                        "日本語説明": tag_ja,
-                        "カテゴリ": cat_path
-                    })
+    all_categories_map = get_all_categories_flat_map()
+    search_query_lower = tag_gen_search_entry.get().lower() if tag_gen_search_entry is not None else ""
+
+    def insert_category_node(category_info, parent_iid=""):
+        # 検索クエリがある場合、このカテゴリまたは子孫が検索にヒットしない場合はスキップ
+        if search_query_lower and not check_if_category_or_descendant_matches_search(category_info, search_query_lower, all_categories_map):
+            return
+
+        iid = available_categories_tree.insert(parent_iid, "end", text=f"📂 {category_info['name']}", open=False, values=(category_info['id'],))
+        
+        children_categories = [cat for cat in app_state['dictionary']['categories'] if cat.get('parent_id') == category_info['id']]
+        for child_cat in children_categories:
+            insert_category_node(child_cat, iid)
+
+    top_level_categories = [cat for cat in app_state['dictionary'].get('categories', []) if cat.get('parent_id') is None]
+    for category in top_level_categories:
+        insert_category_node(category)
+
+def populate_available_tags_list_treeview(selected_category_id=None):
+    """タグセット生成タブの右側タグリストTreeviewにデータをロードする関数"""
+    if available_tags_tree is None: return
+    for item in available_tags_tree.get_children():
+        available_tags_tree.delete(item)
+
+    all_tags_to_display = []
+    # tag_list_search_entry から検索クエリを取得
+    search_query_lower = tag_list_search_entry.get().lower() if tag_list_search_entry is not None else ""
+
+    # 選択されたカテゴリとその子孫カテゴリのタグを再帰的に取得
+    def get_tags_recursively(cat_id):
+        current_category = find_category_by_id(cat_id)
+        if not current_category: return []
+        
+        tags = []
+        for tag in current_category.get('tags', []):
+            tags.append({
+                'en': tag['en'],
+                'ja': tag.get('ja', ''),
+                'category_path': get_category_path(current_category['id'])
+            })
+        
+        children_categories = [cat for cat in app_state['dictionary']['categories'] if cat.get('parent_id') == cat_id]
+        for child_cat in children_categories:
+            tags.extend(get_tags_recursively(child_cat['id']))
+        return tags
     
-    available_df = pd.DataFrame(available_tags_list, columns=["英語タグ名", "日本語説明", "カテゴリ"])
-    available_df = available_df.fillna('')
-    # available_tags_treeがNoneでないことを確認
-    if available_tags_tree is not None:
-        update_treeview(available_tags_tree, available_df)
+    if selected_category_id:
+        all_tags_to_display = get_tags_recursively(selected_category_id)
+    else: # カテゴリが選択されていない場合、全てのタグを表示
+        for category in app_state['dictionary'].get('categories', []):
+            for tag in category.get('tags', []):
+                all_tags_to_display.append({
+                    'en': tag['en'],
+                    'ja': tag.get('ja', ''),
+                    'category_path': get_category_path(category['id'])
+                })
+
+    # 検索クエリでフィルタリング
+    filtered_tags = []
+    for tag_info in all_tags_to_display:
+        if search_query_lower in tag_info['en'].lower() or \
+           search_query_lower in tag_info['ja'].lower() or \
+           search_query_lower in tag_info['category_path'].lower():
+            filtered_tags.append(tag_info)
+
+    # フィルタリングされたタグをTreeviewに挿入
+    for index, tag_info in enumerate(filtered_tags):
+        available_tags_tree.insert("", "end", iid=index, values=(tag_info['en'], tag_info['ja'], tag_info['category_path']))
+
+
+def on_available_category_select(event):
+    """タグセット生成タブの左側カテゴリツリーでカテゴリが選択されたときのイベントハンドラ"""
+    selected_item_id = available_categories_tree.focus()
+    if selected_item_id:
+        # 選択されたアイテムがカテゴリノードであることを確認
+        item_values = available_categories_tree.item(selected_item_id, 'values')
+        if item_values and item_values[0] != "tag": # "tag"はタグノードの識別子
+            category_id = item_values[0] # Get category ID from values
+            populate_available_tags_list_treeview(category_id)
+        else:
+            # タグノードが選択された場合や無効な選択の場合、タグリストをクリア
+            populate_available_tags_list_treeview(None) # 全てのタグを表示するか、クリアするか
+    else:
+        populate_available_tags_list_treeview(None) # 選択が解除された場合も全てのタグを表示
+
+
+def update_available_tags_treeview():
+    """タグセット生成タブのTreeviewを更新する（カテゴリツリーとタグリストの両方）"""
+    populate_available_categories_treeview() # 左側のカテゴリツリーを更新
+    
+    # 左側のカテゴリツリーで現在選択されているカテゴリに基づいて右側のタグリストを更新
+    selected_item_id = available_categories_tree.focus()
+    if selected_item_id:
+        item_values = available_categories_tree.item(selected_item_id, 'values')
+        if item_values and item_values[0] != "tag":
+            category_id = item_values[0]
+            populate_available_tags_list_treeview(category_id)
+        else:
+            populate_available_tags_list_treeview(None) # タグノードが選択されている場合は全てのタグを表示
+    else:
+        populate_available_tags_list_treeview(None) # 何も選択されていない場合は全てのタグを表示
+
 
 def add_selected_tag_to_generating_list():
-    """選択したタグを選択済みリストに追加する"""
+    """選択したタグを選択済みリストに追加する (階層型Treeviewに対応)"""
     if available_tags_tree is None: return
-    selected_item = available_tags_tree.focus()
-    if not selected_item:
+    selected_item_id = available_tags_tree.focus()
+    if not selected_item_id:
         messagebox.showwarning("警告", "追加するタグを選択してください。")
         return
     
-    tag_en = available_tags_tree.item(selected_item, 'values')[0]
-    tag_ja = available_tags_tree.item(selected_item, 'values')[1]
-    category_path = available_tags_tree.item(selected_item, 'values')[2]
+    item_values = available_tags_tree.item(selected_item_id, 'values')
+    
+    # available_tags_tree はもはや階層表示ではないため、item_values[-1] != "tag_node" のチェックは不要
+    # valuesの長さが3であることを確認（英語、日本語、カテゴリパス）
+    if not item_values or len(item_values) < 3:
+        messagebox.showwarning("警告", "タグを選択してください。（カテゴリは追加できません）")
+        return
+
+    tag_en = item_values[0]
+    tag_ja = item_values[1]
+    category_path = item_values[2]
 
     if tag_en not in [t['en'] for t in app_state['selected_generating_tags']]:
         app_state['selected_generating_tags'].append({'en': tag_en, 'ja': tag_ja, 'category_path': category_path})
@@ -2011,6 +2153,7 @@ def update_selected_generating_treeview():
     selected_df = selected_df.fillna('')
     # selected_generating_treeがNoneでないことを確認
     if selected_generating_tree is not None:
+        # Treeviewのクリアはupdate_treeview内で処理される
         update_treeview(selected_generating_tree, selected_df)
 
 def remove_selected_generating_tag():
@@ -2021,11 +2164,18 @@ def remove_selected_generating_tag():
         messagebox.showwarning("警告", "削除するタグを選択してください。")
         return
     
-    tag_en_to_remove = selected_generating_tree.item(selected_item, 'values')[0]
-    app_state['selected_generating_tags'] = [t for t in app_state['selected_generating_tags'] if t['en'] != tag_en_to_remove]
-    update_selected_generating_treeview()
-    update_generated_text()
-    messagebox.showinfo("情報", f"タグ '{tag_en_to_remove}' を削除しました。")
+    # Treeviewのitem_idはDataFrameのindexと一致するようにしている
+    row_index_to_remove = int(selected_item)
+    
+    if 0 <= row_index_to_remove < len(app_state['selected_generating_tags']):
+        tag_en_to_remove = app_state['selected_generating_tags'][row_index_to_remove]['en']
+        del app_state['selected_generating_tags'][row_index_to_remove]
+        update_selected_generating_treeview()
+        update_generated_text()
+        messagebox.showinfo("情報", f"タグ '{tag_en_to_remove}' を削除しました。")
+    else:
+        messagebox.showwarning("エラー", "選択されたタグが見つかりませんでした。")
+
 
 def move_selected_generating_tag_up():
     """選択済みタグを上に移動する"""
@@ -2038,8 +2188,10 @@ def move_selected_generating_tag_up():
         tag_info = app_state['selected_generating_tags'].pop(current_index)
         app_state['selected_generating_tags'].insert(current_index - 1, tag_info)
         update_selected_generating_treeview()
-        selected_generating_tree.focus(selected_generating_tree.get_children()[current_index - 1])
-        selected_generating_tree.selection_set(selected_generating_tree.get_children()[current_index - 1])
+        # 移動後も選択状態を維持
+        new_item_id = str(current_index - 1) # 新しいindexに対応するiid
+        selected_generating_tree.focus(new_item_id)
+        selected_generating_tree.selection_set(new_item_id)
         update_generated_text()
 
 def move_selected_generating_tag_down():
@@ -2053,8 +2205,10 @@ def move_selected_generating_tag_down():
         tag_info = app_state['selected_generating_tags'].pop(current_index)
         app_state['selected_generating_tags'].insert(current_index + 1, tag_info)
         update_selected_generating_treeview()
-        selected_generating_tree.focus(selected_generating_tree.get_children()[current_index + 1])
-        selected_generating_tree.selection_set(selected_generating_tree.get_children()[current_index + 1])
+        # 移動後も選択状態を維持
+        new_item_id = str(current_index + 1) # 新しいindexに対応するiid
+        selected_generating_tree.focus(new_item_id)
+        selected_generating_tree.selection_set(new_item_id)
         update_generated_text()
 
 def update_generated_text():
@@ -2169,7 +2323,7 @@ def main():
     # 全てのUI要素が作成されてから、残りのUI更新を行う
     # populate_dict_treeview() は引数を持つようになったため、初期呼び出しも引数を渡す
     populate_dict_treeview(dict_search_entry.get(), dict_filter_var.get())
-    update_available_tags_treeview()
+    update_available_tags_treeview() # ここで階層型Treeviewを初期化
     populate_category_hierarchy_treeview(category_hierarchy_tree_manage)
     populate_category_hierarchy_treeview(category_hierarchy_tree_classify)
 
@@ -2198,16 +2352,18 @@ if __name__ == "__main__":
     # update_category_dropdowns()などの関数が安全にアクセスチェックできるようにする
     dict_tree = None
     unclassified_tree = None
-    available_tags_tree = None
+    available_tags_tree = None # タグセット生成タブの右側タグリスト用
+    available_categories_tree = None # タグセット生成タブの左側カテゴリツリー用
     selected_generating_tree = None
     generated_text_area = None
     random_generated_label = None
-    tag_gen_search_entry = None
-    tag_gen_filter_var = None
+    tag_gen_search_entry = None # 左側カテゴリツリーの検索用
+    tag_list_search_entry = None # 右側タグリストの検索用
+    tag_gen_filter_var = None # これは使われなくなるが、初期化は残す
     delimiter_var = None
-    dict_search_entry = None # 新しいグローバル変数
-    dict_filter_var = None # 新しいグローバル変数
-    dict_filter_combobox = None # 新しいグローバル変数
+    dict_search_entry = None
+    dict_filter_var = None
+    dict_filter_combobox = None
     
     try:
         main()
